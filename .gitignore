@@ -6,11 +6,11 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
-system/
-time-Sheet/
+# system/
+# time-Sheet/
 
 #codeigniter 3
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
+# /vendor/
