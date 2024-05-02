@@ -19,7 +19,7 @@ class HomeController extends CI_Controller{
         // echo $mail, $mdp ;
         $valiny = $this->AutentificationModel->autentification($mail,$mdp);
         if($valiny != null){
-            $_SESSION['userdata'] = $valiny[0]['id'];
+            $_SESSION['userdata'] = $valiny[0]['idUser'];
             redirect('IndexController/index');
         }
         else{
