@@ -1,4 +1,4 @@
-<script src="<?= base_url('assets/js/html2pdf.bundle.js'); ?>"></script>
+<!-- <script src="<?= base_url('assets/js/html2pdf.bundle.js'); ?>"></script>
 <main id="main" class="main">
 <section class="section" id="section">
     <div class="row">
@@ -11,7 +11,6 @@
             <div class="card-body">
               <h5 class="card-title">Line Chart</h5>
 
-              <!-- Line Chart -->
               <canvas id="lineChart" style="max-height: 400px;"></canvas>
               <script>
                 document.addEventListener("DOMContentLoaded", () => {
@@ -42,11 +41,10 @@
                     html2pdf(content);
                 }
               </script>
-              <!-- End Line CHart -->
             </div>
           </div>
         </div>
       </div>
     </section>
     <button onclick="exportToPDF()">Exporter en PDF</button>
-</main>
+</main> -->
