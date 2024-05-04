@@ -17,3 +17,13 @@
 .radio-container{
     margin-left: 5px;
 }
+
+.signin .box-contact-inner.section-padding {
+    margin-left:5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.img-signin{
+    height: 60vh;
+}
