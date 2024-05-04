@@ -33,6 +33,7 @@
                         <span class="dsn-title-menu">Home</span>
                     </a>
                 </li>
+                <?php if (!$this->session->userdata('user')): ?>
                 <li class="dsn-drop-down">
                     <a href="<?php echo site_url();?>authentification/signin" class="user-no-selection">
                         <span class="dsn-title-menu">Sign in</span>
@@ -43,6 +44,13 @@
                         <span class="dsn-title-menu">Sign Up</span>
                     </a>
                 </li>
+                <?php else: ?>
+                <li class="dsn-drop-down">
+                    <a href="<?php echo site_url();?>authentification/logout" class="user-no-selection">
+                        <span class="dsn-title-menu">Logout</span>
+                    </a>
+                </li>
+                <?php endif; ?>
                 <li class="dsn-drop-down">
                     <a href="<?php echo site_url();?>cours/listCours" class="user-no-selection">
                         <span class="dsn-title-menu">List of course</span>

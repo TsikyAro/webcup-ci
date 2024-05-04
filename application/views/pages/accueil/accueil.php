@@ -24,8 +24,12 @@
                                     </div>
                                     <h1 class="title dsn-load-animate">HumanizeU</h1>
                                     <p class="mt-20 max-w570 dsn-load-animate">
+                                        <?php if ($this->session->userdata('user')): ?>
+                                        Hello <?php echo $this->session->userdata('user')->nom; ?> !
+                                        <?php else: ?>
                                         The first e-learning platform designed specifically for zombies seeking to
                                         integrate harmoniously into human society
+                                        <?php endif; ?>
                                     </p>
                                     <a href="#"
                                         class="mt-20 dsn-button has-border background-theme image-zoom dsn-load-animate"

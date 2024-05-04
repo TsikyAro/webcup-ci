@@ -6,8 +6,7 @@ class CoursOnline extends Base_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url');
-        $this->load->model('CoursController');
+        $this->load->model('CoursModel');
 	}
 	public function template($page, $data){
 		if (!file_exists(APPPATH . 'views/pages/' . $page . '.php')) {
@@ -15,15 +14,15 @@ class CoursOnline extends Base_Controller{
 		}
 
 		$this->load->view('templates/home/header', $data);
-		$this->load->view('pages/accueil/' . $page, $data);
+		$this->load->view('pages/cours/' . $page, $data);
 		$this->load->view('templates/home/footer', $data);
 	}
     public function index(){
 		$data['teams'] = 'CodeForce';
-        $cours1 = $this->CoursController->get_all_cours();
+        $cours1 = $this->CoursModel->get_all_cours();
         $data['cours'] = $cours1;
-        $_SESSION['cours'] = $cours1->ordre;
-		// $this->template('accueil', $data); affichage cours 1
+        $_SESSION['cours'] = $cours1[0]->ordre;
+		$this->template('listCours', $data);
 	}
 
 }
