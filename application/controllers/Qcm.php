@@ -24,4 +24,11 @@ class Qcm extends CI_Controller
 
 		$this->template('qcm', $data);
 	}
+
+    public function resultat()
+	{
+		$data['teams'] = 'CodeForce';
+
+		$this->template('resultat', $data);
+	}
 }
