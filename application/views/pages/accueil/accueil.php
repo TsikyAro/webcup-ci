@@ -3,11 +3,14 @@
     <div id="dsn-scrollbar">
         <div class="main-content">
             <div class="wrapper">
-            <header
+                <header
                     class="header-project full-width p-relative h-100-v over-hidden  dsn-header-animation v-dark-head">
                     <div data-dsn-ajax="img" class="p-absolute dsn-hero-parallax-img w-100 h-100 over-hidden"
                         data-overlay="5">
-                        <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"  alt="">
+                        <img class="cover-bg-img"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                            alt="">
                     </div>
 
 
@@ -15,11 +18,14 @@
                         <div class="content p-relative">
                             <div class="intro-project">
                                 <div id="dsn-hero-title" class="intro-title">
-                                    <div class="subtitle dsn-load-animate line-shap line-shap-before d-inline-block mb-20">Learning & Transformation
+                                    <div
+                                        class="subtitle dsn-load-animate line-shap line-shap-before d-inline-block mb-20">
+                                        Learning & Transformation
                                     </div>
                                     <h1 class="title dsn-load-animate">HumanizeU</h1>
                                     <p class="mt-20 max-w570 dsn-load-animate">
-                                        The first e-learning platform designed specifically for zombies seeking to integrate harmoniously into human society
+                                        The first e-learning platform designed specifically for zombies seeking to
+                                        integrate harmoniously into human society
                                     </p>
                                     <a href="services.html"
                                         class="mt-20 dsn-button has-border background-theme image-zoom dsn-load-animate"
@@ -254,32 +260,30 @@
                                     <div class="title-move z-index-1 " data-dsn-grid="move-section" data-dsn-move="-70"
                                         data-dsn-duration="100%" data-dsn-opacity="1.2" data-dsn-responsive="tablet">
                                         <h2 class="section-title mb-30 dsn-text-shadow text-transform-upper">
-                                            Hello We are , <br /> Dsign Grid
+                                            Hello We are , <br /> an e-learning platform
                                         </h2>
                                     </div>
-                                    <h6 class="mt-80 pb-30 mb-30 border-bottom title-block">We’re a creative agency
-                                        with
-                                        an expertise in make custom
-                                        websites.
+                                    <h6 class="mt-80 pb-30 mb-30 border-bottom title-block">We are an e-learning
+                                        platform specializing in the integration of zombies into human society.
                                     </h6>
                                     <p class="max-w570 dsn-up mb-10 ">
-                                        Founded in 2000, Dsn Grid has become one of the best Digital Agency in
-                                        ThemeForest.
+                                        Founded in 2023, HumanizeU is committed to helping zombies acquire the skills
+                                        they need to live harmoniously among humans.
                                     </p>
                                     <p class="max-w570 dsn-up mb-30 ">
-                                        Blue money going forward, but deploy to production. C-suite. First-order
-                                        optimal
-                                        strategies build on a culture of contribution and inclusion so those options
+                                        We believe that every zombie deserves a chance to integrate and contribute
+                                        positively to human society. Our courses are designed to facilitate this
+                                        transition by offering adapted and inclusive learning.
                                     </p>
 
 
                                     <div class="d-flex flex-column align-items-start ">
                                         <div class="section-title">
                                             <h6 class="dsn-up line-shap line-shap-after">
-                                                Hisham Megahed
+                                            The HumanizeU Team
                                             </h6>
                                             <p class="sub-heading line-bg-left mt-20 dsn-up">
-                                                Digital Artisit
+                                            Experts in transformation.
                                             </p>
                                         </div>
                                     </div>
@@ -288,16 +292,16 @@
                                     <div class="box-awards d-grid grid-md-2  mt-30">
                                         <div class="box-awards-item has-border dsn-up ">
                                             <h5 class="number background-section p-10">
-                                                <span class="has-animate-number title">37</span>
-                                                <span class="sm-title-block">Business
-                                                    <br> partner</span>
+                                                <span class="has-animate-number title">50</span>
+                                                <span class="sm-title-block">Courses 
+                                                    <br> available</span>
                                             </h5>
                                         </div>
 
                                         <div class="box-awards-item has-border dsn-up">
                                             <h5 class="number background-section p-10">
-                                                <span class="has-animate-number title">19</span>
-                                                <span class="sm-title-block">SUTISFIED <br> CUSTOMERS</span>
+                                                <span class="has-animate-number title">95</span>
+                                                <span class="sm-title-block">Satisfied <br> students</span>
                                             </h5>
                                         </div>
 
@@ -318,7 +322,7 @@
                                             data-overlay="3">
                                             <img class="cover-bg-img "
                                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                data-dsn-src="assets/img/about-intro.jpg" alt="">
+                                                data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/pexels-imustbedead-10916168.jpg" alt="">
                                         </div>
                                     </div>
 
@@ -326,9 +330,9 @@
                                     <div
                                         class="box-awards-item has-border big-number p-absolute left-0 bottom-0 ml-40 mb-40 dsn-up v-dark-head">
                                         <h5 class="number  p-10">
-                                            <span class="has-animate-number title">25</span>
+                                            <span class="has-animate-number title">2</span>
                                             <span class="sm-title-block d-block">
-                                                YEARS OF <br /> DIGITAL EXPERIENCE
+                                                YEARS OF <br /> EXPERIENCE IN ZOMBIE LEARNING
                                             </span>
                                         </h5>
                                     </div>

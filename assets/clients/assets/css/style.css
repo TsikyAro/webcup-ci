@@ -79,9 +79,9 @@
 }
 :root {
   --body-font: "Sora", sans-serif;
-  --heading-font: "Poppins", sans-serif;
-  --font-code: Menlo, monaco, Consolas, Lucida Console, monospace;
-  --font-pre: "Courier 10 Pitch", Courier, monospace;
+  --heading-font: "Sora", sans-serif;
+  --font-code: "Sora", Menlo, monaco, Consolas, Lucida Console, monospace;
+  --font-pre: "Sora", Courier, monospace;
   --font-size-base: 16px;
   --font-size-h1: 40px;
   --font-size-h2: 35px;
