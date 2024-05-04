@@ -9,7 +9,7 @@ class Admin extends CI_Controller{
     }
 
     public function index(){
-        echo "index";
+        redirect(site_url('adminprocess'));
     }
 
     public function login(){
