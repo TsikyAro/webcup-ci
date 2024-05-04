@@ -1,0 +1,3 @@
+git rm --cached application/config/config.php
+git rm --cached application/config/database.php
+
