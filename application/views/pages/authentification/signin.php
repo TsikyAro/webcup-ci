@@ -31,9 +31,11 @@
                                     <div class="entry-box">
                                         <label>Your pseudo *</label>
                                         <input id="form_name" type="text" name="pseudo" placeholder="Type your pseudo"
-                                            required="required" data-error="pseudo is required." />
+                                            value="<?php echo set_value('pseudo'); ?>" required="required"
+                                            data-error="pseudo is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('pseudo', '<div class="error">', '</div>'); ?>
                                 </div>
 
                                 <div class="form-group">
@@ -44,6 +46,7 @@
                                             data-error="Valid password is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('password', '<div class="error">', '</div>'); ?>
                                 </div>
 
                                 <div class="text-right">
