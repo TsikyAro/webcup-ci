@@ -7,26 +7,26 @@ class HomeController extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('AutentificationModel');
+        $this->load->model('CoursModel');
     }
-	// --------------------------------------------------
 	public function index()
 	{
 		$this->load->view('autentifications/Login');
 	}
     public function login(){
-        $mail = $_POST['mail'];
+        $nom = $_POST['nom'];
         $mdp = $_POST['mdp'];
-        // echo $mail, $mdp ;
-        $valiny = $this->AutentificationModel->autentification($mail,$mdp);
+        $valiny = $this->AutentificationModel->autentification($nom,$mdp);
         if($valiny != null){
-            $_SESSION['userdata'] = $valiny[0]['idUser'];
-            redirect('IndexController/index');
+            $_SESSION['userdata'] = $valiny;
+            $_SESSION['cours']++;
+            // redirect('IndexController/index'); cours 2
         }
         else{
-			$error ="Please check your password or email!";
+			$error ="Please check your password or username!";
 			$data = array(
 				'error'=> $error,
-				'mail' =>$mail,
+				'mail' =>$nom,
 				'mdp' =>$mdp
 			);
             $this->load->view('autentifications/Login',$data);
@@ -37,5 +37,4 @@ class HomeController extends CI_Controller{
 	{
 		$this->load->view('autentifications/Signin');
 	}
-	// --------------------------------------------------
 }

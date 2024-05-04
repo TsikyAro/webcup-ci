@@ -20,7 +20,45 @@ class Accueil extends CI_Controller
 	}
 	public function index()
 	{
-		$data['teams'] = 'CodeForce';
+		$data['logos'] = [
+			'24h-blanc-HD.png',
+			'avana.jpg',
+			'etech.webp',
+			'ingenosya.webp',
+			'mndpt.webp',
+			'pulse.webp',
+			'novity.webp',
+			'vivetic.webp',
+			'pa4h.webp',
+			'fulldigits-1.webp',
+			'telma.jpg',
+			'hodi.png',
+			'bocasay.webp',
+			'webcup.png'
+		];
+
+		$data['teams'] = [
+			[
+				'name' => 'Aro',
+				'fonction' => 'Developer',
+				'image' => '5.png',
+			],
+			[
+				'name' => 'Tony',
+				'fonction' => 'Developer',
+				'image' => '8.png',
+			],
+			[
+				'name' => 'Finaritra',
+				'fonction' => 'Developer',
+				'image' => '7.png',
+			],
+			[
+				'name' => 'Tsiory',
+				'fonction' => 'Developer',
+				'image' => '6.png',
+			],
+		];
 
 		$this->template('accueil', $data);
 	}
