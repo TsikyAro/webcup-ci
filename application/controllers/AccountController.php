@@ -9,12 +9,11 @@ class AccountController extends CI_Controller
         $this->load->model('AccountModel');
     }
 
-    public function new_account()
+    public function nouvelle_utilisateur()
     {
-        $username = $this->input->post('name');
-        $mail = $this->input->post('email');
-        $password = $this->input->post('password');
-        $signin = $this->AccountModel->insert_user_account($username,$mail,$password);
+        $username = $this->input->post('nom');
+        $password = $this->input->post('motdepasse');
+        $signin = $this->AccountModel->insert_user_account($username,$password);
         $this->load->view('autentifications/Login');
     }
 }

@@ -18,6 +18,6 @@ class IndexController extends CI_Controller
 
 	public function index()
 	{
-		$this->viewer('specifique/chart_pdf',[]);
+		$this->viewer('admin/editors',[]);
 	}
 }
