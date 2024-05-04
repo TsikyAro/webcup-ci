@@ -335,57 +335,22 @@
                                             <div class="testimonial-nav-inner">
                                                 <div class="swiper-container">
                                                     <div class="swiper-wrapper">
+                                                        <?php foreach ($temoinages as $temoinage): ?>
                                                         <div class="swiper-slide d-flex align-items-center">
                                                             <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
                                                                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/<?php echo $temoinage['image']?>"
                                                                     alt="">
                                                             </div>
                                                             <div class="box-text" data-swiper-parallax="30%"
                                                                 data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">HellstarWorks</h4>
-                                                                <h5 class="sm-title-block">Envato Customer</h5>
+                                                                <h4 class="title-block mb-10">
+                                                                    <?php echo $temoinage['name']?></h4>
+                                                                <h5 class="sm-title-block">
+                                                                    <?php echo $temoinage['fonction']?></h5>
                                                             </div>
                                                         </div>
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">lindamiku</h4>
-                                                                <h5 class="sm-title-block">Marketing Manager</h5>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">makrandpatne</h4>
-                                                                <h5 class="sm-title-block">Web Designer</h5>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
-                                                                    alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">MTLGraphic</h4>
-                                                                <h5 class="sm-title-block">Graphic Design</h5>
-                                                            </div>
-                                                        </div>
-
+                                                        <?php endforeach ?>
                                                     </div>
                                                 </div>
 
@@ -394,47 +359,11 @@
                                         <div class="testimonial-content ">
                                             <div class="swiper-container">
                                                 <div class="swiper-wrapper">
+                                                    <?php foreach ($temoinages as $temoinage): ?>
                                                     <div class="swiper-slide">
-                                                        <p>"The designer is just amazing! Very good quality and
-                                                            taste.
-                                                            This template is incredible beautiful. The overall
-                                                            impression
-                                                            is more than good.The support cannot be better. I wish
-                                                            the
-                                                            team all success!"</p>
+                                                        <p><?php echo $temoinage['parole']?></p>
                                                     </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"First of all, I really enjoyed setting this up. What a
-                                                            great
-                                                            layout and design. The support is fast and high quality.
-                                                            They
-                                                            really made an effort to make sure I got the help I
-                                                            needed.
-                                                            keep in mind that it is not only a great design, but
-                                                            also it
-                                                            is easy to change it up with little effort. Great Job!"
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"This theme is awesome and the designer is very helpful.
-                                                            I
-                                                            had a few questions before purchase. He/She helped me
-                                                            with
-                                                            all the doubts. Also, they provide quick support. Thank
-                                                            you
-                                                            so much for a beautiful theme"</p>
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"Basically im using this theme as a base for my new
-                                                            website
-                                                            and i couldnt be happier. Ran into some bumps but the
-                                                            team
-                                                            who developed this theme was there to help me with any
-                                                            problems. Very slick nice ajax portfolio theme"</p>
-                                                    </div>
+                                                    <?php endforeach ?>
                                                 </div>
                                             </div>
                                         </div>

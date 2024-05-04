@@ -60,6 +60,27 @@ class Accueil extends CI_Controller
 			],
 		];
 
+		$data['temoinages'] = [
+			[
+				'name' => 'Zed',
+				'fonction' => 'Transitioning Zombie',
+				'image' => 'zed.jpg',
+				'parole' => 'HumanizeU equipped me with the necessary tools to successfully integrate into human society. Thanks to their interactive and informative courses, I feel more confident and competent in my daily interactions with humans.'
+			],
+			[
+				'name' => 'Zoé',
+				'fonction' => 'Learning Enthusiast Zombie',
+				'image' => 'zoe.jpg',
+				'parole' => "I am incredibly grateful to HumanizeU for helping me find my place in this new world. Their dedicated team supported me every step of my transformation, and now I'm proud to say that I'm a model citizen zombie!"
+			],
+			[
+				'name' => 'Zara',
+				'fonction' => 'Satisfied and Flourishing Zombie',
+				'image' => 'zara.jpg',
+				'parole' => 'HumanizeU has exceeded all my expectations in learning and integration. Their courses are enriching and relevant, and I was able to immediately apply what I learned in my daily life. I highly recommend this platform to any zombies looking to integrate into human society.'
+			],
+		];
+
 		$this->template('accueil', $data);
 	}
 	public function institut()
