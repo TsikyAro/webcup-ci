@@ -494,6 +494,7 @@
                     </div>
                     <div class="container">
                         <div class="d-grid grid-lg-4 grid-sm-2 dsn-up">
+                            <?php foreach ($teams as $team): ?>
                             <div class="team-item">
                                 <div class="team-item-inner">
                                     <div class="team-item-wapper background-section">
@@ -501,17 +502,18 @@
                                             <div class="box-img">
                                                 <img class="cover-bg-img"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                                                    data-dsn-src="<?php echo base_url() ?>assets/team/<?php echo $team['image']; ?>"
                                                     alt="">
                                             </div>
                                             <div class="box-text">
-                                                <h4 class="sm-title-block mb-5">Aro</h4>
-                                                <h5 class="theme-color">Co-Founder / Design</h5>
+                                                <h4 class="sm-title-block mb-5"><?php echo $team['name']; ?></h4>
+                                                <h5 class="theme-color"><?php echo $team['fonction']; ?></h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </section>

@@ -37,6 +37,29 @@ class Accueil extends CI_Controller
 			'webcup.png'
 		];
 
+		$data['teams'] = [
+			[
+				'name' => 'Aro',
+				'fonction' => 'Developer',
+				'image' => '5.png',
+			],
+			[
+				'name' => 'Tony',
+				'fonction' => 'Developer',
+				'image' => '8.png',
+			],
+			[
+				'name' => 'Finaritra',
+				'fonction' => 'Developer',
+				'image' => '7.png',
+			],
+			[
+				'name' => 'Tsiory',
+				'fonction' => 'Developer',
+				'image' => '6.png',
+			],
+		];
+
 		$this->template('accueil', $data);
 	}
 	public function institut()
