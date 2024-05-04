@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 05 mai 2024 à 00:42
+-- Généré le : dim. 05 mai 2024 à 00:48
 -- Version du serveur : 8.0.36-cll-lve
 -- Version de PHP : 8.1.27
 
@@ -84,11 +84,11 @@ CREATE TABLE `qcm_cours` (
 --
 
 INSERT INTO `qcm_cours` (`id`, `idcours`, `question`, `idtype`) VALUES
-(1, 1, 'Pronounce A', 1),
-(2, 1, 'Pronounce B', 1),
-(3, 1, 'Pronounce C', 1),
-(4, 1, 'D?', 2),
-(5, 1, 'Pronounce E', 1);
+(1, 1, 'Pronounce A', 4),
+(2, 1, 'Pronounce B', 4),
+(3, 1, 'Pronounce C', 4),
+(4, 1, 'What is the letter after C ?', 3),
+(5, 1, 'Pronounce E', 4);
 
 -- --------------------------------------------------------
 
@@ -147,7 +147,8 @@ CREATE TABLE `type_question` (
 INSERT INTO `type_question` (`id`, `nom`) VALUES
 (1, 'Multiple Choice'),
 (2, 'True/False'),
-(3, 'question/answer');
+(3, 'Question/Answer'),
+(4, 'Vocal');
 
 -- --------------------------------------------------------
 
@@ -223,8 +224,8 @@ ALTER TABLE `niveau`
 --
 ALTER TABLE `qcm_cours`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idcours` (`idcours`),
-  ADD KEY `idtype` (`idtype`);
+  ADD KEY `idtype` (`idtype`),
+  ADD KEY `qcm_cours_ibfk_1` (`idcours`);
 
 --
 -- Index pour la table `qcm_reponse`
@@ -301,7 +302,7 @@ ALTER TABLE `cours`
 -- Contraintes pour la table `qcm_cours`
 --
 ALTER TABLE `qcm_cours`
-  ADD CONSTRAINT `qcm_cours_ibfk_1` FOREIGN KEY (`idcours`) REFERENCES `qcm_cours` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `qcm_cours_ibfk_1` FOREIGN KEY (`idcours`) REFERENCES `cours` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `qcm_cours_ibfk_2` FOREIGN KEY (`idtype`) REFERENCES `type_question` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
