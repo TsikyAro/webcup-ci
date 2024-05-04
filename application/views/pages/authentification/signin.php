@@ -18,13 +18,9 @@
                             </h2>
                         </div>
 
-                        <?php if ($this->session->flashdata('message')): ?>
-                        <div class="warning">
-                            <?php echo $this->session->flashdata('message'); ?>
-                        </div>
-                        <?php endif; ?>
+                        <?php $this->load->view('includes/messages_flash'); ?>
 
-                        <form id="contact-form" class="form" method="post" action="contact.php" data-toggle="validator">
+                        <form class="form" method="post" action="<?php echo site_url('Authentification/login') ?>" data-toggle="validator">
                             <div class="messages"></div>
                             <div class="input__wrap controls">
                                 <div class="form-group">

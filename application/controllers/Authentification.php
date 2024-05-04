@@ -21,6 +21,9 @@ class Authentification extends CI_Controller
 	}
 	public function signin()
 	{
+		if ($this->session->user) {
+			redirect(site_url('coursonline'));
+		}
 		$data['teams'] = 'CodeForce';
 
 		$this->template('signin', $data);
@@ -28,6 +31,9 @@ class Authentification extends CI_Controller
 
 	public function signup()
 	{
+		if ($this->session->user) {
+			redirect(site_url('coursonline'));
+		}
 		$data['teams'] = 'CodeForce';
 
 		$this->template('signup', $data);
@@ -65,31 +71,36 @@ class Authentification extends CI_Controller
 	}
 
 	public function inscription()
-	{
+{
+	$data = [];
+    $this->form_validation->set_rules('name', 'Name', 'required');
+    $this->form_validation->set_rules('pseudo', 'Pseudo', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    $this->form_validation->set_rules('confirmpassword', 'Confirm Password', 'required|matches[password]');
+    
+    if ($this->form_validation->run() == FALSE) {
+		$this->template('signup', $data);
+    } else {
+        // Validation réussie, inscrire l'utilisateur
+        // Récupérer les données du formulaire
+        $nom = $this->input->post('name');
+        $pseudo = $this->input->post('pseudo');
+        $password = $this->input->post('password');
+        
+        // Créer un tableau avec les données de l'utilisateur
+        $utili = array(
+            'nom' => $nom,
+            'pseudo' => $pseudo,
+            'motdepasse' => $password,
+        );
+        
+        // Insérer l'utilisateur dans la base de données
+        $this->UtilisateurModel->insert($utili);
+        
+        // Afficher un message de succès et rediriger
+        $this->session->set_flashdata('success', 'Please log in after registration.');
+        redirect(site_url('authentification/login'));
+    }
+}
 
-		$this->form_validation->set_rules('name', 'Utilisateur', 'required');
-		$this->form_validation->set_rules('mdp', 'Mot de passe', 'required');
-		$this->form_validation->set_rules('nom', 'Nom', 'required');
-		$this->form_validation->set_rules('prenom', 'Prenom', 'required');
-		$this->form_validation->set_rules('genre', 'Genre', 'required');
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/connexion/header');
-			$this->load->view('pages/connexion/inscription');
-			$this->load->view('templates/connexion/footer');
-		} else {
-			$utili = array(
-				'nom' => $this->input->post('nom'),
-				'prenom' => $this->input->post('prenom'),
-				'email' => $this->input->post('email'),
-				'mdp' => $this->input->post('mdp'),
-				'genre' => $this->input->post('prenom'),
-				'actif' => 1
-			);
-			$this->UtilisateurModel->insert($utili);
-
-			$this->session->set_flashdata('success', 'Veuillez-vous connecter après inscription.');
-
-			redirect(site_url('connexion/index'));
-		}
-	}
 }
