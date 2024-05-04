@@ -1,0 +1,19 @@
+.qcm .entry-box {
+    width: 40%;
+    margin-left: 5vw;
+  }
+
+.qcm .image-response .our-blog-full-img{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.qcm .list-unstyled{
+    margin-left: 5vw;
+}
+
+.radio-container{
+    margin-left: 5px;
+}
