@@ -505,7 +505,7 @@
                                             <div class="logo-box-inner">
                                                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                     data-dsn-src="<?php echo base_url() ?>assets/logo/<?php echo $logo; ?>"
-                                                    alt="">
+                                                    alt="<?php echo $logo; ?>" width="400" height="400">
                                             </div>
                                         </div>
                                         <?php endforeach; ?>
