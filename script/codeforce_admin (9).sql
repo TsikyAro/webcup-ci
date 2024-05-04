@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 05 mai 2024 à 00:48
+-- Généré le : dim. 05 mai 2024 à 01:20
 -- Version du serveur : 8.0.36-cll-lve
 -- Version de PHP : 8.1.27
 
@@ -159,7 +159,12 @@ INSERT INTO `qcm_cours` (`id`, `idcours`, `question`, `idtype`) VALUES
 (2, 1, 'Pronounce B', 4),
 (3, 1, 'Pronounce C', 4),
 (4, 1, 'What is the letter after C ?', 3),
-(5, 1, 'Pronounce E', 4);
+(5, 1, 'Pronounce E', 4),
+(6, 2, 'Pronounce 1', 4),
+(7, 2, 'Pronounce 2', 4),
+(8, 2, 'What is the number after 3?', 3),
+(9, 2, 'Is 2 pronounced \'two\'?', 2),
+(10, 2, 'Who is four?', 1);
 
 -- --------------------------------------------------------
 
@@ -182,10 +187,12 @@ CREATE TABLE `qcm_reponse` (
 
 INSERT INTO `qcm_reponse` (`id`, `idcours`, `reponse`, `type`, `image`, `idquestion`) VALUES
 (1, 1, 'A', 1, 'a.jpg', 1),
-(2, 1, 'B', 0, 'b.jpg', 2),
-(3, 1, 'C', 0, 'c.jpg', 3),
-(4, 1, 'D', 1, 'd.jpg', 4),
-(5, 1, 'E', 0, 'e.jpg', 5);
+(2, 1, 'B', 1, 'b.jpg', 2),
+(3, 1, 'C', 1, 'c.jpg', 3),
+(4, 1, 'R', 0, 'd.jpg', 4),
+(5, 1, 'E', 0, 'e.jpg', 4),
+(6, 1, 'D', 1, 'd.jpg', 4),
+(7, 1, 'T', 0, 't.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -198,6 +205,19 @@ CREATE TABLE `qcm_reponse_utilisateur` (
   `idqcmcours` int NOT NULL,
   `reponseutilisateur` text COLLATE utf8mb3_unicode_ci NOT NULL,
   `idutilisateur` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `remarque`
+--
+
+CREATE TABLE `remarque` (
+  `id` int NOT NULL,
+  `nom` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `contenu` text COLLATE utf8mb3_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- --------------------------------------------------------
@@ -232,19 +252,21 @@ CREATE TABLE `utilisateur` (
   `motdepasse` text COLLATE utf8mb3_unicode_ci NOT NULL,
   `datecreation` date NOT NULL,
   `id` int NOT NULL,
-  `pseudo` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL
+  `pseudo` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `isadmin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`nom`, `motdepasse`, `datecreation`, `id`, `pseudo`) VALUES
-('BraaiinnnZz', 'password123', '2024-05-01', 1, 'BRA'),
-('GrraaahhZz', 'securepwd', '2024-04-28', 2, 'GRA'),
-('MuuhhRaaahhZz', 'strongpass', '2024-04-30', 3, 'MUH'),
-('UuuhhBrraaaiinZz', 'safepassword', '2024-04-25', 4, 'UUH'),
-('GrrrrZz', 'mypassword', '2024-05-02', 5, 'GRR');
+INSERT INTO `utilisateur` (`nom`, `motdepasse`, `datecreation`, `id`, `pseudo`, `isadmin`) VALUES
+('BraaiinnnZz', 'password123', '2024-05-01', 1, 'BRA', 0),
+('GrraaahhZz', 'securepwd', '2024-04-28', 2, 'GRA', 0),
+('MuuhhRaaahhZz', 'strongpass', '2024-04-30', 3, 'MUH', 0),
+('UuuhhBrraaaiinZz', 'safepassword', '2024-04-25', 4, 'UUH', 0),
+('GrrrrZz', 'mypassword', '2024-05-02', 5, 'GRR', 0),
+('ADMIN', 'ADMIN', '2024-05-05', 6, 'ADMIN', 1);
 
 -- --------------------------------------------------------
 
@@ -303,8 +325,8 @@ ALTER TABLE `qcm_cours`
 --
 ALTER TABLE `qcm_reponse`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idcours` (`idcours`),
-  ADD KEY `idquestion` (`idquestion`);
+  ADD KEY `idquestion` (`idquestion`),
+  ADD KEY `qcm_reponse_ibfk_1` (`idcours`);
 
 --
 -- Index pour la table `qcm_reponse_utilisateur`
@@ -313,6 +335,12 @@ ALTER TABLE `qcm_reponse_utilisateur`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idqcmcours` (`idqcmcours`),
   ADD KEY `idutilisateur` (`idutilisateur`);
+
+--
+-- Index pour la table `remarque`
+--
+ALTER TABLE `remarque`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `type_question`
@@ -354,6 +382,18 @@ ALTER TABLE `cours`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT pour la table `remarque`
+--
+ALTER TABLE `remarque`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT pour la table `utilisateur_niveau`
 --
 ALTER TABLE `utilisateur_niveau`
@@ -380,7 +420,7 @@ ALTER TABLE `qcm_cours`
 -- Contraintes pour la table `qcm_reponse`
 --
 ALTER TABLE `qcm_reponse`
-  ADD CONSTRAINT `qcm_reponse_ibfk_1` FOREIGN KEY (`idcours`) REFERENCES `qcm_cours` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `qcm_reponse_ibfk_1` FOREIGN KEY (`idcours`) REFERENCES `cours` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `qcm_reponse_ibfk_2` FOREIGN KEY (`idquestion`) REFERENCES `qcm_cours` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --

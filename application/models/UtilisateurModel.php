@@ -13,7 +13,13 @@
       
         public function login($email, $password)
         {
-            $query = $this->db->get_where('utilisateur', array('pseudo' => $email, 'motdepasse' => $password));
+            $query = $this->db->get_where('utilisateur', array('pseudo' => $email, 'motdepasse' => $password, 'isadmin' => false));
+            return $query->row();
+        }
+
+        public function login_admin($email, $password)
+        {
+            $query = $this->db->get_where('utilisateur', array('pseudo' => $email, 'motdepasse' => $password, 'isadmin' => true));
             return $query->row();
         }
 
