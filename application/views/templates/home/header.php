@@ -30,7 +30,6 @@
     <link href="<?=base_url('assets/clients/assets/css/plugins.css')?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/style.css')?>">
     <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/custom.css')?>">
-
 </head>
 
 
