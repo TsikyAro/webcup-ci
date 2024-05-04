@@ -16,3 +16,5 @@ application/logs/*
 /vendor/
 /application/config/config.php
 /application/config/database.php
+/system
+/config/config.php

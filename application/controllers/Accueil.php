@@ -21,6 +21,8 @@ class Accueil extends CI_Controller
 	public function index()
 	{
 		$this->load->model('NiveauModel');
+		$this->load->model('CoursModel');
+
 		$data['logos'] = [
 			'24h-blanc-HD.png',
 			'avana.jpg',
@@ -83,6 +85,8 @@ class Accueil extends CI_Controller
 		];
 
 		$data['niveaux'] = $this->NiveauModel->get_all_niveau();
+		$data['cours'] = $this->CoursModel->get_trois_cours_random();
+
 		$this->template('accueil', $data);
 	}
 	public function institut()

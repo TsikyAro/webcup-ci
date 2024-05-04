@@ -31,4 +31,24 @@ class Authentification extends CI_Controller
 
 		$this->template('signup', $data);
 	}
+
+	public function login(){
+		if ($this->session->user) {
+			redirect(site_url('welcome/index'));
+		}
+		$this->form_validation->set_rules('email', 'Utilisateur', 'required');
+		$this->form_validation->set_rules('password', 'Mot de passe', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('pages/login.php');
+		} else {
+			$data = $this->user->login($this->input->post('email'), $this->input->post('password'));
+			if ($data) {
+				$this->session->set_userdata('user', $data);
+				redirect(site_url('welcome/index'));
+			} else {
+				$data['msg'] = 'E-mail ou Mot de passe incorrect!';
+				$this->load->view('pages/login.php', $data);
+			}
+		}
+	}
 }

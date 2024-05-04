@@ -7,7 +7,11 @@ class CoursModel extends CI_Model{
             return $query->result();
     }
     public function get_cours($ordre){
-        $query = $this->db->get_where('ordre',array('idcours' => $ordre));
+        $query = $this->db->get_where('cours',array('idcours' => $ordre));
+            return $query->row();
+    }
+    public function get_cours_by_id($id){
+        $query = $this->db->get_where('cours',array('id' => $id));
             return $query->row();
     }
     public function get_qcm_pour_un_cours($cours){
@@ -15,5 +19,10 @@ class CoursModel extends CI_Model{
             return $query->result();
     }
 
-
+    public function get_trois_cours_random(){
+        $this->db->order_by('RAND()');
+        $this->db->limit(3);
+        $query = $this->db->get('cours');
+        return $query->result();
+    }
 }
