@@ -73,6 +73,9 @@
                             <a href="#" data-hover-text="+261 34 87 402 07" class="link-hover">+261 34 87 402 07</a>
                         </p>
                     </div>
+                    <div class="nav-content">
+                        <div id="ecoindex-badge" data-theme="dark"></div>
+                    </div>
                 </div>
             </div>
         </nav>

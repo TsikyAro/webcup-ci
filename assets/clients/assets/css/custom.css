@@ -108,3 +108,15 @@
   color: green;
   font-weight: 600;
 }
+
+#ecoindex-badge-link {
+  align-items: center;
+  border-radius:none !important;
+  display: flex;
+  font-size: 13px;
+  gap: 0.85em;
+  padding: 0.5em 0.5em 0.5em 0.8em;
+  text-decoration: none;
+  background-color: #0d2e38;
+  color: #fff;
+}
