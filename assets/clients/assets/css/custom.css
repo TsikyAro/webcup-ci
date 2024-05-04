@@ -33,6 +33,62 @@
   object-fit: cover;
 }
 
+
+#result {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+#result td,
+#result th {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+}
+
+#result th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #106e0152;
+    color: white;
+}
+
+.result-content{
+    margin-top: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.result{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    animation: countTo 2s ease-in-out forwards; /* Applique l'animation */
+}
+
+@keyframes countTo {
+    from { content: '0'; } /* Démarre à 0 */
+    to { content: '100'; } /* Se termine à 100 (vous pouvez changer cette valeur selon vos besoins) */
+}
+
+.icon-zombi{
+    width: 4vw;
+}
+
+.point{
+    display: flex;
+    gap: 18vw;
+    justify-content:center;
+    align-items: center;
+}
+
 .warning {
   color: #ffecb5;
   margin-bottom: 25px;

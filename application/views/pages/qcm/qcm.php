@@ -114,11 +114,11 @@
                                                                 <span>Travel</span>
                                                             </div>
                                                             <h4 class="title-block mb-20">
-                                                                <a href="post.html" class="effect-ajax">The Day I Lost
+                                                                <p class="effect-ajax">The Day I Lost
                                                                     My
                                                                     Child
                                                                     in
-                                                                    Charles de Gaulle Airport</a>
+                                                                    Charles de Gaulle Airport</p>
                                                             </h4>
                                                             <p>Streamer fish California halibut Pacific saury. Slickhead
                                                                 grunion
