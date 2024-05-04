@@ -18,6 +18,12 @@
                             </h2>
                         </div>
 
+                        <?php if ($this->session->flashdata('message')): ?>
+                        <div class="warning">
+                            <?php echo $this->session->flashdata('message'); ?>
+                        </div>
+                        <?php endif; ?>
+
                         <form id="contact-form" class="form" method="post" action="contact.php" data-toggle="validator">
                             <div class="messages"></div>
                             <div class="input__wrap controls">
