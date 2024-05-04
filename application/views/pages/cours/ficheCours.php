@@ -9,9 +9,9 @@
                     <div class="container">
                         <div class="content-hero p-relative d-flex flex-column h-100 dsn-hero-parallax-title">
                             <p class="subtitle p-relative line-shap  line-shap-after">
-                                <span class="pl-10 pr-10 background-main dsn-load-animate">NEWS & IDEAS</span>
+                                <span class="pl-10 pr-10 background-main dsn-load-animate">LEARN & UNDERSTAND</span>
                             </p>
-                            <h1 class="title mt-30 dsn-load-animate text-transform-upper">Our Stories</h1>
+                            <h1 class="title mt-30 dsn-load-animate text-transform-upper">Course: <?= $cours->titre?></h1>
                         </div>
                     </div>
                 </header>
@@ -23,7 +23,7 @@
                         <div class="container ">
                             <div class="dsn-posts d-grid grid-lg-1">
                                 <div class="fiche-content">
-                                    <h1>Cours 1</h1>
+                                    <?= $cours->description?>
                                 </div>
                                 <div
                                     class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">

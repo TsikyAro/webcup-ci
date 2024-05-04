@@ -41,8 +41,25 @@ CREATE TABLE `cours` (
 -- Déchargement des données de la table `cours`
 --
 
+INSERT INTO cours VALUES
+(3, 3, 'Emotions et relations humaines', 1, 
+'Decouvrez comment ressentir et exprimer des emotions humaines, ainsi que les bases des relations interpersonnelles.', 
+'emotions_relations.jpg', 
+'Apprenez a ressentir et exprimer des emotions.');
+
+
+INSERT INTO cours VALUES
+(2, 2, 'Fiainana', 1, '<h1>HTML</h1>', 'basic.jpg', '');
+
 INSERT INTO `cours` (`id`, `ordre`, `titre`, `idniveau`, `description`, `photo`, `descriptioncourte`) VALUES
-(1, 1, 'ALPHABET', 1, 'HTML', 'basic.jpg', '');
+(2, 2, 'Émotions et relations humaines', 1, 'Découvrez comment ressentir et exprimer des émotions humaines, ainsi que les bases des relations interpersonnelles.', 'emotions_relations.jpg', 'Apprenez à ressentir et exprimer des émotions.')
+
+
+(3, 3, 'Mode de vie sain', 2, 'Adoptez un mode de vie sain en comprenant l importance de l exercice, de la nutrition et du repos pour le bien-être humain.', 'mode_vie_sain.jpg', 'Adoptez un mode de vie sain.'),
+(4, 4, 'Culture et coutumes', 3, 'Explorez les diverses cultures et coutumes humaines à travers le monde pour mieux comprendre la diversité.', 'culture_coutumes.jpg', 'Explorez la diversité culturelle.'),
+(5, 5, 'Emploi et carrière', 3, 'Découvrez les différentes opportunités d emploi et de carrière disponibles pour les individus cherchant à contribuer à la société.', 'emploi_carriere.jpg', 'Explorez les opportunités d emploi.');
+(6, 6, 'Introduction à l humanité', 1, 'Ce cours vous apprendra les bases de l humanité, y compris la marche droite, la communication verbale et bien plus encore.', 'introduction_humanite.jpg', 'Apprenez les bases de l humanité.')
+
 
 -- --------------------------------------------------------
 
