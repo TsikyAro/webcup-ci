@@ -24,7 +24,7 @@
                     d="m256 367.4c-61.427 0-111.4-49.974-111.4-111.4s49.973-111.4 111.4-111.4 111.4 49.974 111.4 111.4-49.973 111.4-111.4 111.4zm0-192.8c-44.885 0-81.4 36.516-81.4 81.4s36.516 81.4 81.4 81.4 81.4-36.516 81.4-81.4-36.515-81.4-81.4-81.4z" />
             </svg>
         </div>
-        <div class="box-inner-option p-absolute">
+        <!-- <div class="box-inner-option p-absolute">
             <div class="day-night ">
                 <span class="title-mode text-center">Style Color</span>
                 <div class="night active" data-dsn-theme="dark">
@@ -89,7 +89,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
     </div>
     <!-- ========== End Style Option Page ========== -->
