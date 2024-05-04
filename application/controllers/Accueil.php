@@ -20,8 +20,69 @@ class Accueil extends CI_Controller
 	}
 	public function index()
 	{
-		$data['teams'] = 'CodeForce';
+		$this->load->model('NiveauModel');
+		$data['logos'] = [
+			'24h-blanc-HD.png',
+			'avana.jpg',
+			'etech.webp',
+			'ingenosya.webp',
+			'mndpt.webp',
+			'pulse.webp',
+			'novity.webp',
+			'vivetic.webp',
+			'pa4h.webp',
+			'fulldigits-1.webp',
+			'telma.jpg',
+			'hodi.png',
+			'bocasay.webp',
+			'webcup.png'
+		];
 
+		$data['teams'] = [
+			[
+				'name' => 'Aro',
+				'fonction' => 'Developer',
+				'image' => '5.png',
+			],
+			[
+				'name' => 'Tony',
+				'fonction' => 'Developer',
+				'image' => '8.png',
+			],
+			[
+				'name' => 'Finaritra',
+				'fonction' => 'Developer',
+				'image' => '7.png',
+			],
+			[
+				'name' => 'Tsiory',
+				'fonction' => 'Developer',
+				'image' => '6.png',
+			],
+		];
+
+		$data['temoinages'] = [
+			[
+				'name' => 'Zed',
+				'fonction' => 'Transitioning Zombie',
+				'image' => 'zed.jpg',
+				'parole' => 'HumanizeU equipped me with the necessary tools to successfully integrate into human society. Thanks to their interactive and informative courses, I feel more confident and competent in my daily interactions with humans.'
+			],
+			[
+				'name' => 'Zoé',
+				'fonction' => 'Learning Enthusiast Zombie',
+				'image' => 'zoe.jpg',
+				'parole' => "I am incredibly grateful to HumanizeU for helping me find my place in this new world. Their dedicated team supported me every step of my transformation, and now I'm proud to say that I'm a model citizen zombie!"
+			],
+			[
+				'name' => 'Zara',
+				'fonction' => 'Satisfied and Flourishing Zombie',
+				'image' => 'zara.jpg',
+				'parole' => 'HumanizeU has exceeded all my expectations in learning and integration. Their courses are enriching and relevant, and I was able to immediately apply what I learned in my daily life. I highly recommend this platform to any zombies looking to integrate into human society.'
+			],
+		];
+
+		$data['niveaux'] = $this->NiveauModel->get_all_niveau();
 		$this->template('accueil', $data);
 	}
 	public function institut()

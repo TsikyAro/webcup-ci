@@ -148,14 +148,15 @@
                             </span>
 
                         </p>
-                        <h2 class="section-title  title-cap">We are delivering beautiful <br> digital products for
-                            you.
+                        <h2 class="section-title  title-cap">we offer three levels of learning <br> to help you
+                            seamlessly integrate <br> into human society.
                         </h2>
 
                     </div>
 
                     <div class="container">
                         <div class=" grid dsn-isotope dsn-col">
+                            <?php foreach ($niveaux as $niveau): ?>
                             <div
                                 class="col-md-6 col-lg-4 dsn-col-lg-3 dsn-col-md-2 dsn-col-sm-1 services-item grid-item dsn-up">
                                 <div class="services-item-inner">
@@ -189,80 +190,14 @@
                                             </svg>
                                         </div>
                                         <div class="service-description">
-                                            <h4 class="title-block mb-15">Creative Idea</h4>
-                                            <p>Te qui alii inermis vivendum, an decore libris eum. Te mel dico alia
-                                                wisi, cu
-                                                vitae noluisse phaedrum.</p>
+                                            <h4 class="title-block mb-15"><?php echo $niveau->nom ;?></h4>
+                                            <p><?php echo $niveau->description; ?></p>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-
-                            <div
-                                class="col-md-6 col-lg-4 dsn-col-lg-3 dsn-col-md-2 dsn-col-sm-1 services-item grid-item dsn-up">
-                                <div class="services-item-inner">
-                                    <div class="line line-top"></div>
-                                    <div class="line line-bottom"></div>
-                                    <div class="line line-left"></div>
-                                    <div class="line line-right"></div>
-
-                                    <div class="services-content background-section">
-                                        <div class="icon">
-                                            <svg enable-background="new 0 0 300 300" viewBox="0 0 300 300"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <path
-                                                        d="m260 197.907h-8.08c-1.714-42.685-30.743-79.928-71.92-91.959v-16.041c0-.06-.031-.109-.034-.168-.019-.442-.096-.88-.263-1.301-.014-.036-.018-.075-.033-.11-.004-.009-.004-.019-.008-.028l-11.711-26.684-12.354-25.455c-1.336-2.758-5.859-2.758-7.195 0l-12.418 25.594-11.646 26.545c-.004.009-.004.019-.008.028-.015.036-.019.075-.033.111-.167.421-.244.858-.262 1.3-.003.059-.034.109-.034.169v16.043c-41.182 12.034-70.209 49.261-71.92 91.957h-12.081c-2.209 0-4 1.791-4 4v48c0 2.209 1.791 4 4 4h84v2.514c0 5.23 4.256 9.486 9.486 9.486h37.027c5.23 0 9.486-4.256 9.486-9.486v-2.514h80c2.209 0 4-1.791 4-4v-48c.001-2.21-1.79-4.001-3.999-4.001zm-136 0h-23.848c1.24-16.309 10.075-30.892 23.848-39.711zm8-104h8.486v92c0 2.209 1.791 4 4 4s4-1.791 4-4v-92h8v77.455c0 2.209 1.791 4 4 4s4-1.791 4-4v-77.455h7.514v91.262c0 2.209 1.791 4 4 4s4-1.791 4-4v-26.97c13.77 8.82 22.608 23.404 23.848 39.708h-71.848zm20-46.84 5.969 12.295h-11.936zm-9.744 20.295h19.485l8.136 18.545h-35.754zm28.258 190.545h-37.027c-.82 0-1.486-.666-1.486-1.486v-2.514h40v2.514c-.001.82-.667 1.486-1.487 1.486zm85.486-12h-12v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-16v-40h12c2.209 0 4-1.791 4-4 0-40.01 26.151-75.437 64-87.56v34.529c-19.751 10.46-32 30.688-32 53.031 0 2.209 1.791 4 4 4h112c2.209 0 4-1.791 4-4 0-22.336-12.249-42.573-32-53.033v-34.53c37.847 12.125 64 47.559 64 87.563 0 2.209 1.791 4 4 4h8z" />
-                                                    <circle cx="56" cy="217.907" r="4" />
-                                                    <path
-                                                        d="m243.516 138.392c.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172l2.828-2.828 2.828 2.828c.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172c1.562-1.562 1.562-4.094 0-5.656l-2.828-2.828 2.828-2.828c1.562-1.562 1.562-4.094 0-5.656s-4.094-1.562-5.656 0l-2.828 2.827-2.828-2.828c-1.562-1.562-4.094-1.562-5.656 0s-1.562 4.094 0 5.656l2.828 2.828-2.828 2.828c-1.563 1.563-1.563 4.094 0 5.657z" />
-                                                    <circle cx="232" cy="77.907" r="4" />
-                                                    <path
-                                                        d="m66 105.907c7.719 0 14-6.281 14-14s-6.281-14-14-14-14 6.281-14 14 6.281 14 14 14zm0-20c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="service-description">
-                                            <h4 class="title-block mb-15">High Creative Minds</h4>
-                                            <p>Te qui alii inermis vivendum, an decore libris eum. Te mel dico alia
-                                                wisi, cu
-                                                vitae noluisse phaedrum.</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="col-md-6 col-lg-4 dsn-col-lg-3 dsn-col-md-2 dsn-col-sm-1 services-item grid-item dsn-up">
-                                <div class="services-item-inner">
-                                    <div class="line line-top"></div>
-                                    <div class="line line-bottom"></div>
-                                    <div class="line line-left"></div>
-                                    <div class="line line-right"></div>
-
-                                    <div class="services-content background-section">
-                                        <div class="icon">
-                                            <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <g>
-                                                        <path
-                                                            d="m512 348.29c0-67.987-55.249-123.85-123.85-123.85-41.498 0-78.292 20.518-100.777 51.939h-156.178v-30.014c0-9.603-7.812-17.415-17.415-17.415h-35.474c-9.603 0-17.415 7.812-17.415 17.415v30.014h-8.534c-20.632 0-37.417-16.785-37.417-37.417v-55.847c0-20.632 16.786-37.417 37.417-37.417h354.298c20.632 0 37.418 16.785 37.418 37.417v33.807c0 4.126 3.344 7.47 7.47 7.47s7.47-3.344 7.47-7.47v-33.807c0-28.869-23.488-52.357-52.358-52.357h-77.534v-32.402c0-32.254-26.241-58.495-58.495-58.495h-82.239c-32.255 0-58.495 26.241-58.495 58.495v32.403h-77.535c-28.869-.001-52.357 23.487-52.357 52.356v221.529c0 28.87 23.488 52.358 52.357 52.358h238.752c4.126 0 7.47-3.344 7.47-7.47s-3.344-7.47-7.47-7.47h-238.752c-20.632 0-37.417-16.786-37.417-37.418v-129.11c9.512 9.73 22.768 15.785 37.417 15.785h8.534v7.593c0 19.382 15.769 35.151 35.152 35.151s35.152-15.769 35.152-35.151v-7.593h147.012c-8.879 17.065-13.906 36.441-13.906 56.971 0 68.004 55.266 123.85 123.85 123.85 68.525 0 123.849-55.796 123.849-123.85zm-227.866-217.532h-109.255v-32.402c0-7.449 6.06-13.508 13.508-13.508h82.239c7.449 0 13.508 6.06 13.508 13.508zm-139.302-32.402c0-24.017 19.539-43.555 43.555-43.555h82.239c24.017 0 43.555 19.539 43.555 43.555v32.403h-15.107v-32.403c0-15.686-12.762-28.448-28.448-28.448h-82.239c-15.686 0-28.448 12.762-28.448 28.448v32.403h-15.107zm-66.526 145.534h35.474c1.365 0 2.475 1.111 2.475 2.475v11.452h-40.424v-11.452c0-1.365 1.111-2.475 2.475-2.475zm37.949 55.022c0 11.145-9.067 20.211-20.212 20.211s-20.212-9.066-20.212-20.211v-26.156h40.423v26.156zm369.438 97.782c-9.525-2.698-21.429-4.923-34.986-6.592 4.985-26.767 4.994-56.809 0-83.625 13.557-1.669 25.461-3.894 34.986-6.592 7.27 14.59 11.368 31.026 11.368 48.404-.001 17.379-4.099 33.815-11.368 48.405zm-53.428-103.379c-11.506.941-23.875 1.518-36.645 1.681v-54.341c19.116 6.459 31.11 33.253 36.645 52.66zm-51.585-52.705v54.386c-12.764-.163-25.126-.739-36.628-1.679 7.875-27.707 21.384-47.699 36.628-52.707zm-36.654 162.656c11.509-.941 23.881-1.519 36.655-1.681v54.374c-15.234-4.986-28.774-24.87-36.655-52.693zm51.594 52.659v-54.341c12.77.163 25.139.74 36.645 1.681-5.533 19.4-17.526 46.2-36.645 52.66zm0-69.282v-76.705c14.1-.171 27.63-.824 40.143-1.906 4.972 25.698 5.012 54.613 0 80.517-12.513-1.082-26.043-1.736-40.143-1.906zm82.182-100.115c-8.454 2.12-18.789 3.903-30.409 5.28-4.934-18.386-12.239-34.01-21.213-45.572 21.053 7.871 39.036 22.079 51.622 40.292zm-127.779-40.255c-8.921 11.508-16.202 27.078-21.128 45.534-11.616-1.378-21.947-3.16-30.397-5.279 12.567-18.185 30.514-32.376 51.525-40.255zm-59.415 53.614c9.526 2.698 21.431 4.923 34.991 6.592-1.578 8.517-2.693 17.504-3.28 26.878-.258 4.117 2.871 7.665 6.988 7.922 4.109.254 7.664-2.87 7.923-6.989.573-9.144 1.708-17.947 3.322-26.257 12.509 1.081 26.034 1.734 40.128 1.905v76.705c-14.095.171-27.619.824-40.129 1.905-1.263-6.528-2.243-13.358-2.879-20.442-.369-4.109-4.001-7.152-8.108-6.773-4.109.369-7.141 3.999-6.773 8.107.634 7.06 1.594 13.969 2.851 20.657-13.578 1.669-25.499 3.896-35.035 6.598-7.27-14.59-11.368-31.026-11.368-48.404.002-17.379 4.1-33.815 11.369-48.404zm7.891 110.165c8.472-2.125 18.832-3.91 30.482-5.289 4.266 15.867 11.017 32.535 21.132 45.578-21.05-7.872-39.03-22.078-51.614-40.289zm127.681 40.292c8.974-11.562 16.279-27.186 21.213-45.572 11.62 1.378 21.955 3.16 30.409 5.28-12.586 18.213-30.569 32.421-51.622 40.292z" />
-                                                    </g>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="service-description">
-                                            <h4 class="title-block mb-15">Business Planning</h4>
-                                            <p>We develop the relationships that underpin the next phase in your
-                                                organisation’s growth. We do this by discerning the people.</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </section>
@@ -274,7 +209,8 @@
                     <div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
                         <img class="transform-3d has-bigger-scale"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
+                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                            alt="">
                     </div>
                     <div class="pro-text background-section box-padding" data-dsn-grid="move-section"
                         data-dsn-responsive="tablet">
@@ -310,7 +246,7 @@
                 <!-- ========== End  box description move ========== -->
 
 
-                
+
 
 
                 <!-- ========== testimonial Section ========== -->
@@ -334,53 +270,22 @@
                                             <div class="testimonial-nav-inner">
                                                 <div class="swiper-container">
                                                     <div class="swiper-wrapper">
+                                                        <?php foreach ($temoinages as $temoinage): ?>
                                                         <div class="swiper-slide d-flex align-items-center">
                                                             <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
                                                                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
+                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/<?php echo $temoinage['image']?>"
+                                                                    alt="">
                                                             </div>
                                                             <div class="box-text" data-swiper-parallax="30%"
                                                                 data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">HellstarWorks</h4>
-                                                                <h5 class="sm-title-block">Envato Customer</h5>
+                                                                <h4 class="title-block mb-10">
+                                                                    <?php echo $temoinage['name']?></h4>
+                                                                <h5 class="sm-title-block">
+                                                                    <?php echo $temoinage['fonction']?></h5>
                                                             </div>
                                                         </div>
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">lindamiku</h4>
-                                                                <h5 class="sm-title-block">Marketing Manager</h5>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">makrandpatne</h4>
-                                                                <h5 class="sm-title-block">Web Designer</h5>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="swiper-slide d-flex align-items-center">
-                                                            <div class="box-img mr-15" data-swiper-parallax-scale="0.7">
-                                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                                            </div>
-                                                            <div class="box-text" data-swiper-parallax="30%"
-                                                                data-swiper-parallax-opacity="0">
-                                                                <h4 class="title-block mb-10">MTLGraphic</h4>
-                                                                <h5 class="sm-title-block">Graphic Design</h5>
-                                                            </div>
-                                                        </div>
-
+                                                        <?php endforeach ?>
                                                     </div>
                                                 </div>
 
@@ -389,47 +294,11 @@
                                         <div class="testimonial-content ">
                                             <div class="swiper-container">
                                                 <div class="swiper-wrapper">
+                                                    <?php foreach ($temoinages as $temoinage): ?>
                                                     <div class="swiper-slide">
-                                                        <p>"The designer is just amazing! Very good quality and
-                                                            taste.
-                                                            This template is incredible beautiful. The overall
-                                                            impression
-                                                            is more than good.The support cannot be better. I wish
-                                                            the
-                                                            team all success!"</p>
+                                                        <p><?php echo $temoinage['parole']?></p>
                                                     </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"First of all, I really enjoyed setting this up. What a
-                                                            great
-                                                            layout and design. The support is fast and high quality.
-                                                            They
-                                                            really made an effort to make sure I got the help I
-                                                            needed.
-                                                            keep in mind that it is not only a great design, but
-                                                            also it
-                                                            is easy to change it up with little effort. Great Job!"
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"This theme is awesome and the designer is very helpful.
-                                                            I
-                                                            had a few questions before purchase. He/She helped me
-                                                            with
-                                                            all the doubts. Also, they provide quick support. Thank
-                                                            you
-                                                            so much for a beautiful theme"</p>
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-                                                        <p>"Basically im using this theme as a base for my new
-                                                            website
-                                                            and i couldnt be happier. Ran into some bumps but the
-                                                            team
-                                                            who developed this theme was there to help me with any
-                                                            problems. Very slick nice ajax portfolio theme"</p>
-                                                    </div>
+                                                    <?php endforeach ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -489,6 +358,7 @@
                     </div>
                     <div class="container">
                         <div class="d-grid grid-lg-4 grid-sm-2 dsn-up">
+                            <?php foreach ($teams as $team): ?>
                             <div class="team-item">
                                 <div class="team-item-inner">
                                     <div class="team-item-wapper background-section">
@@ -496,263 +366,242 @@
                                             <div class="box-img">
                                                 <img class="cover-bg-img"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
+                                                    data-dsn-src="<?php echo base_url() ?>assets/team/<?php echo $team['image']; ?>"
+                                                    alt="">
                                             </div>
                                             <div class="box-text">
-                                                <h4 class="sm-title-block mb-5">Ahmed Shawky</h4>
-                                                <h5 class="theme-color">Co-Founder / Design</h5>
-
-                                                <ul class="box-social mt-20">
-                                                    <li data-dsn="parallax"><a href="#">FB</a></li>
-                                                    <li data-dsn="parallax"><a href="#">TW</a></li>
-                                                    <li data-dsn="parallax"><a href="#">LN</a></li>
-
-                                                </ul>
+                                                <h4 class="sm-title-block mb-5"><?php echo $team['name']; ?></h4>
+                                                <h5 class="theme-color"><?php echo $team['fonction']; ?></h5>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
-                            <div class="team-item">
-                                <div class="team-item-inner">
-                                    <div class="team-item-wapper background-section">
-                                        <div class="item-content d-flex a-item-center">
-                                            <div class="box-img">
-                                                <img class="cover-bg-img"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                            </div>
-                                            <div class="box-text">
-                                                <h4 class="sm-title-block mb-5">Hisham Megahed</h4>
-                                                <h5 class="theme-color">Creative Director</h5>
-
-                                                <ul class="box-social mt-20">
-                                                    <li data-dsn="parallax"><a href="#">FB</a></li>
-                                                    <li data-dsn="parallax"><a href="#">TW</a></li>
-                                                    <li data-dsn="parallax"><a href="#">LN</a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="team-item">
-                                <div class="team-item-inner">
-                                    <div class="team-item-wapper background-section">
-                                        <div class="item-content d-flex a-item-center">
-                                            <div class="box-img">
-                                                <img class="cover-bg-img"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                            </div>
-                                            <div class="box-text">
-                                                <h4 class="sm-title-block mb-5">Jeremy Smith</h4>
-                                                <h5 class="theme-color">Creative Studio Head</h5>
-
-                                                <ul class="box-social mt-20">
-                                                    <li data-dsn="parallax"><a href="#">FB</a></li>
-                                                    <li data-dsn="parallax"><a href="#">TW</a></li>
-                                                    <li data-dsn="parallax"><a href="#">LN</a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="team-item">
-                                <div class="team-item-inner">
-                                    <div class="team-item-wapper background-section">
-                                        <div class="item-content d-flex a-item-center">
-                                            <div class="box-img">
-                                                <img class="cover-bg-img"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                            </div>
-                                            <div class="box-text">
-                                                <h4 class="sm-title-block mb-5">Bill Gardner</h4>
-                                                <h5 class="theme-color">Web designer</h5>
-
-                                                <ul class="box-social mt-20">
-                                                    <li data-dsn="parallax"><a href="#">FB</a></li>
-                                                    <li data-dsn="parallax"><a href="#">TW</a></li>
-                                                    <li data-dsn="parallax"><a href="#">LN</a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </section>
                 <!-- ========== End team Section ========== -->
 
                 <section class="our-blog section-margin p-relative dsn-swiper" data-dsn-animate="section"
-                        data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="Lasts post">
-                        <div class="container mb-70 d-flex text-center flex-column align-items-center">
-                            <p class="sub-heading line-shap line-shap-before mb-15">
-                                <span class="line-bg-right">
-                                    Lasts post
-                                </span>
-                            </p>
-                            <h2 class="section-title  title-cap">
-                                Latest And Greatest <br>Post
-                            </h2>
+                    data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="Lasts post">
+                    <div class="container mb-70 d-flex text-center flex-column align-items-center">
+                        <p class="sub-heading line-shap line-shap-before mb-15">
+                            <span class="line-bg-right">
+                                Lasts post
+                            </span>
+                        </p>
+                        <h2 class="section-title  title-cap">
+                            Latest And Greatest <br>Post
+                        </h2>
 
-                        </div>
+                    </div>
 
 
-                        <div class="dsn-container">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
+                    <div class="dsn-container">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
 
-                                    <div class="swiper-slide blog-classic-item">
-                                        <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-                                            data-swiper-parallax-scale="0.85">
-                                            <div class="box-meta">
-                                                <div class="entry-date">
-                                                    <span class="author">Dsn Grid</span>
-                                                    <a href="#">March , 17th 2020</a>
-                                                </div>
+                                <div class="swiper-slide blog-classic-item">
+                                    <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
+                                        data-swiper-parallax-scale="0.85">
+                                        <div class="box-meta">
+                                            <div class="entry-date">
+                                                <span class="author">Dsn Grid</span>
+                                                <a href="#">March , 17th 2020</a>
                                             </div>
+                                        </div>
 
-                                            <div class="box-img over-hidden">
-                                                <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        <div class="box-img over-hidden">
+                                            <img class="cover-bg-img"
+                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                 data-dsn-src="assets/img/blog/1.jpg" alt="">
-                                            </div>
-                                            <div class="box-content p-relative">
+                                        </div>
+                                        <div class="box-content p-relative">
 
-                                                <div class="box-content-body">
-                                                    <div class="metas">
-                                                        <span class="mb-5">Lifestyle</span>
-                                                    </div>
-                                                    <h4 class="title-block mb-20 ">
-                                                        <a href="#">Extreme Athleticism Is the New Midlife Crisis</a>
-                                                    </h4>
-                                                    <p>Whoever said “It’s not about the destination. It’s the journey”
-                                                        never
-                                                        flew on a long ...</p>
-                                                    <a href="#" class="link-vist p-relative mt-20">
-
-                                                        <span class="link-vist-text">Load More</span>
-
-                                                        <div class="link-vist-arrow">
-                                                            <svg viewBox="0 0 80 80">
-                                                                <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
-                                                                </polyline>
-                                                                <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
-                                                                </line>
-                                                            </svg>
-                                                        </div>
-                                                    </a>
+                                            <div class="box-content-body">
+                                                <div class="metas">
+                                                    <span class="mb-5">Lifestyle</span>
                                                 </div>
+                                                <h4 class="title-block mb-20 ">
+                                                    <a href="#">Extreme Athleticism Is the New Midlife Crisis</a>
+                                                </h4>
+                                                <p>Whoever said “It’s not about the destination. It’s the journey”
+                                                    never
+                                                    flew on a long ...</p>
+                                                <a href="#" class="link-vist p-relative mt-20">
+
+                                                    <span class="link-vist-text">Load More</span>
+
+                                                    <div class="link-vist-arrow">
+                                                        <svg viewBox="0 0 80 80">
+                                                            <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
+                                                            </polyline>
+                                                            <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
+                                                            </line>
+                                                        </svg>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="swiper-slide blog-classic-item">
-                                        <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-                                            data-swiper-parallax-scale="0.85">
-                                            <div class="box-meta">
-                                                <div class="entry-date">
-                                                    <span class="author">Dsn Grid</span>
-                                                    <a href="#">March , 17th 2020</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="box-img over-hidden">
-                                                <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                data-dsn-src="assets/img/blog/2.jpg" alt="">
-                                            </div>
-                                            <div class="box-content p-relative">
-
-                                                <div class="box-content-body">
-                                                    <div class="metas">
-                                                        <span class="mb-5">Travel</span>
-                                                    </div>
-                                                    <h4 class="title-block mb-20">
-                                                        <a href="#">The Day I Lost My Child in Charles de Gaulle
-                                                            Airport</a>
-                                                    </h4>
-                                                    <p>Whoever said “It’s not about the destination. It’s the journey”
-                                                        never
-                                                        flew on a long ...</p>
-                                                    <a href="#" class="link-vist p-relative mt-20">
-
-                                                        <span class="link-vist-text">Load More</span>
-
-                                                        <div class="link-vist-arrow">
-                                                            <svg viewBox="0 0 80 80">
-                                                                <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
-                                                                </polyline>
-                                                                <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
-                                                                </line>
-                                                            </svg>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide blog-classic-item">
-                                        <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-                                            data-swiper-parallax-scale="0.85">
-                                            <div class="box-meta">
-                                                <div class="entry-date">
-                                                    <span class="author">Dsn Grid</span>
-                                                    <a href="#">March , 17th 2020</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="box-img over-hidden">
-                                                <img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                data-dsn-src="assets/img/blog/3.jpg" alt="">
-                                            </div>
-                                            <div class="box-content p-relative">
-
-                                                <div class="box-content-body">
-                                                    <div class="metas">
-                                                        <span class="mb-5">Health</span>
-                                                    </div>
-                                                    <h4 class="title-block mb-20">
-                                                        <a href="#">Relationships Aren’t Easy, But They’re Worth It</a>
-                                                    </h4>
-                                                    <p>Whoever said “It’s not about the destination. It’s the journey”
-                                                        never
-                                                        flew on a long ...</p>
-                                                    <a href="#" class="link-vist p-relative mt-20">
-
-                                                        <span class="link-vist-text">Load More</span>
-
-                                                        <div class="link-vist-arrow">
-                                                            <svg viewBox="0 0 80 80">
-                                                                <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
-                                                                </polyline>
-                                                                <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
-                                                                </line>
-                                                            </svg>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 </div>
-                                <div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between">
+
+                                <div class="swiper-slide blog-classic-item">
+                                    <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
+                                        data-swiper-parallax-scale="0.85">
+                                        <div class="box-meta">
+                                            <div class="entry-date">
+                                                <span class="author">Dsn Grid</span>
+                                                <a href="#">March , 17th 2020</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-img over-hidden">
+                                            <img class="cover-bg-img"
+                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                data-dsn-src="assets/img/blog/2.jpg" alt="">
+                                        </div>
+                                        <div class="box-content p-relative">
+
+                                            <div class="box-content-body">
+                                                <div class="metas">
+                                                    <span class="mb-5">Travel</span>
+                                                </div>
+                                                <h4 class="title-block mb-20">
+                                                    <a href="#">The Day I Lost My Child in Charles de Gaulle
+                                                        Airport</a>
+                                                </h4>
+                                                <p>Whoever said “It’s not about the destination. It’s the journey”
+                                                    never
+                                                    flew on a long ...</p>
+                                                <a href="#" class="link-vist p-relative mt-20">
+
+                                                    <span class="link-vist-text">Load More</span>
+
+                                                    <div class="link-vist-arrow">
+                                                        <svg viewBox="0 0 80 80">
+                                                            <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
+                                                            </polyline>
+                                                            <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
+                                                            </line>
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide blog-classic-item">
+                                    <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
+                                        data-swiper-parallax-scale="0.85">
+                                        <div class="box-meta">
+                                            <div class="entry-date">
+                                                <span class="author">Dsn Grid</span>
+                                                <a href="#">March , 17th 2020</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-img over-hidden">
+                                            <img class="cover-bg-img"
+                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                data-dsn-src="assets/img/blog/3.jpg" alt="">
+                                        </div>
+                                        <div class="box-content p-relative">
+
+                                            <div class="box-content-body">
+                                                <div class="metas">
+                                                    <span class="mb-5">Health</span>
+                                                </div>
+                                                <h4 class="title-block mb-20">
+                                                    <a href="#">Relationships Aren’t Easy, But They’re Worth It</a>
+                                                </h4>
+                                                <p>Whoever said “It’s not about the destination. It’s the journey”
+                                                    never
+                                                    flew on a long ...</p>
+                                                <a href="#" class="link-vist p-relative mt-20">
+
+                                                    <span class="link-vist-text">Load More</span>
+
+                                                    <div class="link-vist-arrow">
+                                                        <svg viewBox="0 0 80 80">
+                                                            <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
+                                                            </polyline>
+                                                            <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
+                                                            </line>
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between">
+                                <div class="swiper-next">
+                                    <div class="next-container">
+                                        <div class="container-inner">
+                                            <div class="triangle"></div>
+                                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24">
+                                                <g class="circle-wrap" fill="none" stroke-width="1"
+                                                    stroke-linejoin="round" stroke-miterlimit="10">
+                                                    <circle cx="12" cy="12" r="10.5"></circle>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-prev">
+                                    <div class="prev-container">
+                                        <div class="container-inner">
+                                            <div class="triangle"></div>
+                                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g class="circle-wrap" fill="none" stroke-width="1"
+                                                    stroke-linejoin="round" stroke-miterlimit="10">
+                                                    <circle cx="12" cy="12" r="10.5"></circle>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========== End brand-client Section ========== -->
+                <section class="brand-client section-margin" data-dsn-animate="section" data-dsn-title="our clients">
+
+                    <div class="brand-client section-padding full-width v-dark dsn-swiper" data-dsn-title="our clients"
+                        data-dsn-option='{"slidesPerView":4,"spaceBetween":0,"centeredSlides":false,"autoplay":true }'>
+                        <div class="container mb-70 d-flex text-center flex-column align-items-center">
+                            <p class="sub-heading line-shap line-shap-after mb-15">
+                                <span class="line-bg-left">Our CLIENTS</span>
+
+                            </p>
+                            <h2 class="section-title">Your successful, <br> our reputation</h2>
+                        </div>
+                        <div class="container ">
+                            <div class="wrapper-client">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <?php foreach ($logos as $logo): ?>
+                                        <div class="swiper-slide logo-box border-top dsn-up">
+                                            <div class="logo-box-inner">
+                                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                    data-dsn-src="<?php echo base_url() ?>assets/logo/<?php echo $logo; ?>"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+
+                                <div class="dsn-pagination w-100 mt-30 dsn-container d-flex justify-content-between">
                                     <div class="swiper-next">
                                         <div class="next-container">
                                             <div class="container-inner">
@@ -785,82 +634,6 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-
-                <!-- ========== End brand-client Section ========== -->
-                <section class="brand-client section-margin" data-dsn-animate="section" data-dsn-title="our clients">
-
-                    <div class="container mb-70 d-flex text-center flex-column  align-items-center">
-                        <p class="sub-heading line-shap line-shap-before mb-15">
-                            <span class="line-bg-right">
-                                Our clients
-                            </span>
-
-                        </p>
-                        <h2 class="section-title  title-cap">
-                            Your successful, our <br />reputation
-                        </h2>
-
-                    </div>
-                    <div class="container">
-                        <div class="wrapper-client dsn-up">
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <div class="logo-box-inner">
-                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
                 <!-- ========== End brand-client Section ========== -->
 
@@ -911,8 +684,8 @@
 
                             <div class="column-right">
                                 <h5>2024 © by
-                                    <a class="link-hover" data-hover-text="Force" target="_blank" rel="nofollow"
-                                        href="#">Code</a>
+                                    <a class="link-hover" data-hover-text="Code Force" target="_blank" rel="nofollow"
+                                        href="#">Code Force</a>
                                 </h5>
                             </div>
                         </div>
