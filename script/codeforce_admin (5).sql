@@ -49,7 +49,45 @@ INSERT INTO cours VALUES
 
 
 INSERT INTO cours VALUES
-(2, 2, 'Fiainana', 1, '<h1>HTML</h1>', 'basic.jpg', '');
+(4, 4, 'ALPHABET', 1, '
+  <div style="font-family: Arial; display: flex; flex-wrap: wrap; justify-content: center;">
+      <?php foreach (range("A", "Z") as $lettre) {?>
+          <div class="card"
+              style="width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;"
+              onclick="readAlphabet(\'<?= $lettre?>\', this)"
+              onmouseover="this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }"
+              onmouseout="this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }">
+              <div style="font-size: 24px;"><?= $lettre?></div>
+              <input type="hidden" style="display: none;" value="<?= $lettre?>">
+          </div>
+      <?php }?>
+  </div>
+  <script>
+    function submitForm() {
+        var inputValue = document.getElementById("textInput").value;
+        document.getElementById("result").innerText = "Vous avez saisi : " + inputValue;
+        speakText(inputValue);
+    }
+    function speakText(text) {
+        var speech = new SpeechSynthesisUtterance();
+        speech.lang = "en-US"; // Définir la langue, si nécessaire
+        speech.text = text;
+        speech.rate = 0.3;
+        window.speechSynthesis.speak(speech);
+    }
+</script>
+<script>
+  function readAlphabet(letter, element) {
+      var speech = new SpeechSynthesisUtterance();
+      speech.lang = "en-US"; // Langue française
+      speech.text = letter;
+      speech.rate = 0.3;
+      window.speechSynthesis.speak(speech);
+      element.classList.add(\'clicked\');
+      element.style.backgroundColor = \'#106e01\';
+  }
+</script> ', 'basic.jpg', '');
+
 
 INSERT INTO `cours` (`id`, `ordre`, `titre`, `idniveau`, `description`, `photo`, `descriptioncourte`) VALUES
 (2, 2, 'Émotions et relations humaines', 1, 'Découvrez comment ressentir et exprimer des émotions humaines, ainsi que les bases des relations interpersonnelles.', 'emotions_relations.jpg', 'Apprenez à ressentir et exprimer des émotions.')
