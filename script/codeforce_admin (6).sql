@@ -49,7 +49,7 @@ INSERT INTO cours VALUES
 
 
 INSERT INTO cours VALUES
-(4, 4, 'ALPHABET', 1, '
+(1, 1, 'ALPHABET', 1, '
   <div style="font-family: Arial; display: flex; flex-wrap: wrap; justify-content: center;">
       <?php foreach (range("A", "Z") as $lettre) {?>
           <div class="card"
