@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="discrption" content="parallax one page" />
     <meta name="keyword"
-        content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
+        content="HumanizeU - Learning to walk among the living" />
 
     <!--  Title -->
-    <title>HumanizeU - Apprendre à marcher parmi les vivants</title>
+    <title>HumanizeU - Learning to walk among the living</title>
 
     <!-- Font Google -->
     <link rel="preload"
@@ -21,15 +21,12 @@
             href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
             rel="stylesheet"></noscript>
 
-    <link rel="shortcut icon" href="<?=base_url('assets/clients/assets/img/favicon.ico')?>" type="image/x-icon" />
-    <link rel="icon" href="<?=base_url('assets/clients/assets/img/favicon.ico')?>" type="image/x-icon" />
-
     <link rel="preload" href="<?=base_url('assets/clients/assets/img/circle-dotted.png')?>" as="image" />
 
     <!-- custom styles (optional) -->
-    <link href="<?=base_url('assets/clients/assets/css/plugins.css')?>" rel="stylesheet" />
-    <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/style.css')?>">
-    <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/custom.css')?>">
+    <link href="<?=base_url('assets/clients/assets/css/plugins.min.css')?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/style-webcup.min.css')?>">
+    <link rel="stylesheet" href="<?=base_url('assets/clients/assets/css/custom.min.css')?>">
 </head>
 
 

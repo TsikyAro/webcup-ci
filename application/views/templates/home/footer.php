@@ -30,7 +30,7 @@
 <script src="<?=base_url('assets/clients/assets/js/jquery-3.1.1.min.js')?>"></script>
 <script src="<?=base_url('assets/clients/assets/js/plugins.min.js')?>"></script>
 <script src="<?=base_url('assets/clients/assets/js/dsn-grid.min.js')?>"></script>
-<script src="<?=base_url('assets/clients/assets/js/custom.js')?>"></script>
+<script src="<?=base_url('assets/clients/assets/js/custom.min.js')?>"></script>
 <script src="https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js" defer></script>
 </body>
 
