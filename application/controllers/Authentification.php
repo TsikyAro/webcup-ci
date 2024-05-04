@@ -45,7 +45,7 @@ class Authentification extends CI_Controller
 		}
 		$data= [];
 		$this->form_validation->set_rules('pseudo', 'Pseudo', 'required');
-		$this->form_validation->set_rules('password', 'Mot de passe', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->template('signin',$data);
 		} else {
