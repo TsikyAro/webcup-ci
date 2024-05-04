@@ -7,6 +7,7 @@ class Cours extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('CoursModel');
 	}
 	public function template($page, $data)
 	{
@@ -21,14 +22,16 @@ class Cours extends CI_Controller
 	public function listCours()
 	{
 		$data['teams'] = 'CodeForce';
-
+		$data['cours'] = $this->CoursModel->get_all_cours();
 		$this->template('listCours', $data);
 	}
 
 	public function ficheCours()
 	{
 		$data['teams'] = 'CodeForce';
-
+		$cour = $_GET['cours'];
+		$cours = $this->CoursModel->get_cours_by_id($cour);
+		$data['cours'] = $cours;
 		$this->template('ficheCours', $data);
 	}
 }
