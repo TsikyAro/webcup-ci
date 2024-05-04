@@ -19,5 +19,10 @@ class CoursModel extends CI_Model{
             return $query->result();
     }
 
-
+    public function get_trois_cours_random(){
+        $this->db->order_by('RAND()');
+        $this->db->limit(3);
+        $query = $this->db->get('cours');
+        return $query->result();
+    }
 }

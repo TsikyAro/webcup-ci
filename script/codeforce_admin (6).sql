@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 04 mai 2024 à 16:55
+-- Généré le : sam. 04 mai 2024 à 22:37
 -- Version du serveur : 8.0.36-cll-lve
 -- Version de PHP : 8.1.27
 
@@ -90,14 +90,7 @@ INSERT INTO cours VALUES
 
 
 INSERT INTO `cours` (`id`, `ordre`, `titre`, `idniveau`, `description`, `photo`, `descriptioncourte`) VALUES
-(2, 2, 'Émotions et relations humaines', 1, 'Découvrez comment ressentir et exprimer des émotions humaines, ainsi que les bases des relations interpersonnelles.', 'emotions_relations.jpg', 'Apprenez à ressentir et exprimer des émotions.')
-
-
-(3, 3, 'Mode de vie sain', 2, 'Adoptez un mode de vie sain en comprenant l importance de l exercice, de la nutrition et du repos pour le bien-être humain.', 'mode_vie_sain.jpg', 'Adoptez un mode de vie sain.'),
-(4, 4, 'Culture et coutumes', 3, 'Explorez les diverses cultures et coutumes humaines à travers le monde pour mieux comprendre la diversité.', 'culture_coutumes.jpg', 'Explorez la diversité culturelle.'),
-(5, 5, 'Emploi et carrière', 3, 'Découvrez les différentes opportunités d emploi et de carrière disponibles pour les individus cherchant à contribuer à la société.', 'emploi_carriere.jpg', 'Explorez les opportunités d emploi.');
-(6, 6, 'Introduction à l humanité', 1, 'Ce cours vous apprendra les bases de l humanité, y compris la marche droite, la communication verbale et bien plus encore.', 'introduction_humanite.jpg', 'Apprenez les bases de l humanité.')
-
+(1, 1, 'ALPHABET', 1, 'HTML', 'basic.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -212,19 +205,20 @@ CREATE TABLE `utilisateur` (
   `nom` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL,
   `motdepasse` text COLLATE utf8mb3_unicode_ci NOT NULL,
   `datecreation` date NOT NULL,
-  `id` int NOT NULL
+  `id` int NOT NULL,
+  `pseudo` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`nom`, `motdepasse`, `datecreation`, `id`) VALUES
-('BraaiinnnZz', 'password123', '2024-05-01', 1),
-('GrraaahhZz', 'securepwd', '2024-04-28', 2),
-('MuuhhRaaahhZz', 'strongpass', '2024-04-30', 3),
-('UuuhhBrraaaiinZz', 'safepassword', '2024-04-25', 4),
-('GrrrrZz', 'mypassword', '2024-05-02', 5);
+INSERT INTO `utilisateur` (`nom`, `motdepasse`, `datecreation`, `id`, `pseudo`) VALUES
+('BraaiinnnZz', 'password123', '2024-05-01', 1, 'BRA'),
+('GrraaahhZz', 'securepwd', '2024-04-28', 2, 'GRA'),
+('MuuhhRaaahhZz', 'strongpass', '2024-04-30', 3, 'MUH'),
+('UuuhhBrraaaiinZz', 'safepassword', '2024-04-25', 4, 'UUH'),
+('GrrrrZz', 'mypassword', '2024-05-02', 5, 'GRR');
 
 -- --------------------------------------------------------
 
@@ -239,6 +233,12 @@ CREATE TABLE `utilisateur_niveau` (
   `idcourssuivant` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
+INSERT INTO `utilisateur_niveau` (`id`, `idutilisateur`, `idniveau`, `idcourssuivant`) VALUES
+(1, 1, 1, 2),
+(2, 1, 1, 3),
+(3, 1, 1, 4),
+(4, 2, 1, 2),
+(5, 2, 1, 3);
 -- --------------------------------------------------------
 
 --
@@ -303,7 +303,8 @@ ALTER TABLE `type_question`
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `idx_pseudo` (`pseudo`);
 
 --
 -- Index pour la table `utilisateur_niveau`

@@ -22,32 +22,38 @@
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <?php if(isset($error)){?>
-                  <div style="color:red"><?= $error?></div>
-               <?php }?>
-              <form class="pt-3"  action="<?= base_url("index.php/HomeController/login")?>" method="post">
+              <div style="color:red"><?= $error?></div>
+              <?php }?>
+              <form class="pt-3" action="<?= base_url("index.php/HomeController/login")?>" method="post">
                 <div class="form-group">
                   <?php if(isset($mail)){?>
-                     <input type="email" name="mail"  value="<?= $mail?>"  class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>
-                     <label>Email</label>
-                     <?php }else{?>
-                     <input type="email" name="mail"  class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>
-                     <label>Email</label>
+                  <input type="email" name="mail" value="<?= $mail?>" class="form-control form-control-lg"
+                    id="exampleInputEmail1" placeholder="Username" required>
+                  <label>Email</label>
+                  <?php }else{?>
+                  <input type="email" name="mail" class="form-control form-control-lg" id="exampleInputEmail1"
+                    placeholder="Username" required>
+                  <label>Email</label>
                   <?php } ?>
                 </div>
                 <div class="form-group">
                   <?php if(isset($mdp)){?>
-                     <input type="password" name="mdp" value=<?= $mdp?> class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
-                     <label>Password</label>
+                  <input type="password" name="mdp" value=<?= $mdp?> class="form-control form-control-lg"
+                    id="exampleInputPassword1" placeholder="Password" required>
+                  <label>Password</label>
                   <?php }else{?>
-                     <input type="password" name="mdp" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
-                     <label>Password</label>
+                  <input type="password" name="mdp" class="form-control form-control-lg" id="exampleInputPassword1"
+                    placeholder="Password" required>
+                  <label>Password</label>
                   <?php } ?>
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign In</button>
-               </div>
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign
+                    In</button>
+                </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="<?= base_url("index.php/HomeController/signin")?>" class="text-primary">Create</a>
+                  Don't have an account? <a href="<?= base_url("index.php/HomeController/signin")?>"
+                    class="text-primary">Create</a>
                 </div>
               </form>
             </div>
@@ -65,4 +71,3 @@
 </body>
 
 </html>
-
