@@ -14,11 +14,11 @@
 
     <!-- Font Google -->
     <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
             rel="stylesheet"></noscript>
 
     <link rel="shortcut icon" href="<?=base_url('assets/clients/assets/img/favicon.ico')?>" type="image/x-icon" />

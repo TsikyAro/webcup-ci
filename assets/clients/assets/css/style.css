@@ -42,7 +42,7 @@
 :root, :root .v-light {
   --bg-color: #f9f9f9;
   --assistant-color: #e6e6e6;
-  --theme-color: #E07D7D;
+  --theme-color: #106e01;
   --font-color: #0009;
   --heading-color: #000;
   --border-color: #bebebe;
@@ -54,7 +54,7 @@
 :root .v-dark, :root .v-dark-head {
   --bg-color: #000;
   --assistant-color: #101010;
-  --theme-color: #E07D7D;
+  --theme-color: #106e01;
   --font-color: #bbb;
   --heading-color: #fff;
   --border-color: rgba(255, 255, 255, 0.07);
@@ -67,7 +67,7 @@
   .v-dark-head-mobile {
     --bg-color: #000;
     --assistant-color: #101010;
-    --theme-color: #E07D7D;
+    --theme-color: #106e01;
     --font-color: #bbb;
     --heading-color: #fff;
     --border-color: rgba(255, 255, 255, 0.07);
@@ -78,7 +78,7 @@
   }
 }
 :root {
-  --body-font: "Roboto", sans-serif;
+  --body-font: "Sora", sans-serif;
   --heading-font: "Poppins", sans-serif;
   --font-code: Menlo, monaco, Consolas, Lucida Console, monospace;
   --font-pre: "Courier 10 Pitch", Courier, monospace;
