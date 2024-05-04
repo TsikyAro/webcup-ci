@@ -33,6 +33,7 @@
                         <span class="dsn-title-menu">Home</span>
                     </a>
                 </li>
+                <?php if (!$this->session->userdata('user')): ?>
                 <li class="dsn-drop-down">
                     <a href="<?php echo site_url();?>authentification/signin" class="user-no-selection">
                         <span class="dsn-title-menu">Sign in</span>
@@ -43,6 +44,13 @@
                         <span class="dsn-title-menu">Sign Up</span>
                     </a>
                 </li>
+                <?php else: ?>
+                <li class="dsn-drop-down">
+                    <a href="<?php echo site_url();?>authentification/logout" class="user-no-selection">
+                        <span class="dsn-title-menu">Logout</span>
+                    </a>
+                </li>
+                <?php endif; ?>
                 <li class="dsn-drop-down">
                     <a href="<?php echo site_url();?>cours/listCours" class="user-no-selection">
                         <span class="dsn-title-menu">List of course</span>
@@ -64,6 +72,9 @@
                         <p class="links over-hidden">
                             <a href="#" data-hover-text="+261 34 87 402 07" class="link-hover">+261 34 87 402 07</a>
                         </p>
+                    </div>
+                    <div class="nav-content">
+                        <div id="ecoindex-badge" data-theme="dark"></div>
                     </div>
                 </div>
             </div>

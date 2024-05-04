@@ -18,24 +18,30 @@
                             </h2>
                         </div>
 
-                        <form id="contact-form" class="form" method="post" action="contact.php" data-toggle="validator">
+                        <?php $this->load->view('includes/messages_flash'); ?>
+
+                        <form  class="form" method="post" action="<?php echo site_url('Authentification/inscription') ?>" data-toggle="validator">
                             <div class="messages"></div>
                             <div class="input__wrap controls">
                                 <div class="form-group">
                                     <div class="entry-box">
                                         <label>Your name *</label>
                                         <input id="form_name" type="text" name="name" placeholder="Type your name"
+                                        value="<?php echo set_value('name'); ?>"
                                             required="required" data-error="name is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('name', '<div class="error">', '</div>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <div class="entry-box">
                                         <label>Your pseudo *</label>
                                         <input id="form_name" type="text" name="pseudo" placeholder="Type your pseudo"
+                                        value="<?php echo set_value('pseudo'); ?>"
                                             required="required" data-error="pseudo is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('pseudo', '<div class="error">', '</div>'); ?>
                                 </div>
 
                                 <div class="form-group">
@@ -46,6 +52,7 @@
                                             data-error="Valid password is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('password', '<div class="error">', '</div>'); ?>
                                 </div>
 
                                 <div class="form-group">
@@ -56,6 +63,7 @@
                                             data-error="Confirm password is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <?php echo form_error('confirmpassword', '<div class="error">', '</div>'); ?>
                                 </div>
 
                                 <div class="text-right">
