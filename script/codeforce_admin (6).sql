@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 04 mai 2024 à 22:37
+-- Généré le : dim. 05 mai 2024 à 00:42
 -- Version du serveur : 8.0.36-cll-lve
 -- Version de PHP : 8.1.27
 
@@ -41,56 +41,9 @@ CREATE TABLE `cours` (
 -- Déchargement des données de la table `cours`
 --
 
-INSERT INTO cours VALUES
-(3, 3, 'Emotions et relations humaines', 1, 
-'Decouvrez comment ressentir et exprimer des emotions humaines, ainsi que les bases des relations interpersonnelles.', 
-'emotions_relations.jpg', 
-'Apprenez a ressentir et exprimer des emotions.');
-
-
-INSERT INTO cours VALUES
-(1, 1, 'ALPHABET', 1, '
-  <div style="font-family: Arial; display: flex; flex-wrap: wrap; justify-content: center;">
-      <?php foreach (range("A", "Z") as $lettre) {?>
-          <div class="card"
-              style="width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;"
-              onclick="readAlphabet(\'<?= $lettre?>\', this)"
-              onmouseover="this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }"
-              onmouseout="this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }">
-              <div style="font-size: 24px;"><?= $lettre?></div>
-              <input type="hidden" style="display: none;" value="<?= $lettre?>">
-          </div>
-      <?php }?>
-  </div>
-  <script>
-    function submitForm() {
-        var inputValue = document.getElementById("textInput").value;
-        document.getElementById("result").innerText = "Vous avez saisi : " + inputValue;
-        speakText(inputValue);
-    }
-    function speakText(text) {
-        var speech = new SpeechSynthesisUtterance();
-        speech.lang = "en-US"; // Définir la langue, si nécessaire
-        speech.text = text;
-        speech.rate = 0.3;
-        window.speechSynthesis.speak(speech);
-    }
-</script>
-<script>
-  function readAlphabet(letter, element) {
-      var speech = new SpeechSynthesisUtterance();
-      speech.lang = "en-US"; // Langue française
-      speech.text = letter;
-      speech.rate = 0.3;
-      window.speechSynthesis.speak(speech);
-      element.classList.add(\'clicked\');
-      element.style.backgroundColor = \'#106e01\';
-  }
-</script> ', 'basic.jpg', '');
-
-
 INSERT INTO `cours` (`id`, `ordre`, `titre`, `idniveau`, `description`, `photo`, `descriptioncourte`) VALUES
-(1, 1, 'ALPHABET', 1, 'HTML', 'basic.jpg', '');
+(1, 1, 'ALPHABET', 1, '<div style=\"font-family: Arial; display: flex; flex-wrap: wrap; justify-content: center;\">\n      <?php foreach (range(\"A\", \"Z\") as $lettre) {?>\n          <div class=\"card\"\n              style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\n              onclick=\"readAlphabet(\'<?= $lettre?>\', this)\"\n              onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\n              onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\n              <div style=\"font-size: 24px;\"><?= $lettre?></div>\n              <input type=\"hidden\" style=\"display: none;\" value=\"<?= $lettre?>\">\n          </div>\n      <?php }?>\n  </div>\n  <script>\n    function submitForm() {\n        var inputValue = document.getElementById(\"textInput\").value;\n        document.getElementById(\"result\").innerText = \"Vous avez saisi : \" + inputValue;\n        speakText(inputValue);\n    }\n    function speakText(text) {\n        var speech = new SpeechSynthesisUtterance();\n        speech.lang = \"en-US\"; // Définir la langue, si nécessaire\n        speech.text = text;\n        speech.rate = 0.3;\n        window.speechSynthesis.speak(speech);\n    }\n</script>\n<script>\n  function readAlphabet(letter, element) {\n      var speech = new SpeechSynthesisUtterance();\n      speech.lang = \"en-US\"; // Langue française\n      speech.text = letter;\n      speech.rate = 0.3;\n      window.speechSynthesis.speak(speech);\n      element.classList.add(\'clicked\');\n      element.style.backgroundColor = \'#106e01\';\n  }\n</script> ', 'basic.jpg', ''),
+(2, 2, 'NOMBRE', 1, '<div class=\"fiche-content\">\r\n    <h1>Number</h1>\r\n    <div style=\"font-family: Arial; display: flex; flex-wrap: wrap; justify-content: center;\">\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'one\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">1</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"1\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'two\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">2</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"2\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'three\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">3</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"3\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'four\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">4</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"4\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'five\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">5</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"5\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'six\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">6</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"6\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'seven\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">7</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"7\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'eight\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">8</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"8\">\r\n        </div>\r\n\r\n        <div class=\"card\"\r\n            style=\"width: 100px; height: 100px; border: 1px solid #ccc; margin: 10px; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.2s ease; background-color: transparent; color: #fff;\"\r\n            onclick=\"readAlphabet(\'nine\', this)\"\r\n            onmouseover=\"this.style.transform=\'scale(1.1)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'#106e01\'; }\"\r\n            onmouseout=\"this.style.transform=\'scale(1.0)\'; if (!this.classList.contains(\'clicked\')) { this.style.backgroundColor=\'transparent\'; }\">\r\n            <div style=\"font-size: 24px;\">9</div>\r\n            <input type=\"hidden\" style=\"display: none;\" value=\"9\">\r\n        </div>\r\n\r\n    </div>\r\n    <script>\r\n        function submitForm() {\r\n            var inputValue = document.getElementById(\"textInput\").value;\r\n            document.getElementById(\"result\").innerText = \"Vous avez saisi : \" + inputValue;\r\n            speakText(inputValue);\r\n        }\r\n\r\n        function speakText(text) {\r\n            var speech = new SpeechSynthesisUtterance();\r\n            speech.lang = \"en-US\"; // Définir la langue, si nécessaire\r\n            speech.text = text;\r\n            speech.rate = 0.3;\r\n            window.speechSynthesis.speak(speech);\r\n\r\n        }\r\n    </script>\r\n    <script>\r\n        function readAlphabet(letter, element) {\r\n            var speech = new SpeechSynthesisUtterance();\r\n            speech.lang = \"en-US\"; // Langue française\r\n            speech.text = letter;\r\n            speech.rate = 0.3;\r\n            window.speechSynthesis.speak(speech);\r\n            element.classList.add(\'clicked\');\r\n            element.style.backgroundColor = \'#106e01\';\r\n        }\r\n    </script>\r\n</div>', 'nombre.jpg', 'Plongez dans le monde ludique de l\'apprentissage des nombres avec notre site interactif dédié à enseigner les chiffres à un zombi curieux.');
 
 -- --------------------------------------------------------
 
@@ -131,11 +84,11 @@ CREATE TABLE `qcm_cours` (
 --
 
 INSERT INTO `qcm_cours` (`id`, `idcours`, `question`, `idtype`) VALUES
-(1, 1, 'A?', 1),
-(2, 2, 'B?', 1),
-(3, 3, 'C?', 2),
-(4, 4, 'D?', 2),
-(5, 5, 'E?', 1);
+(1, 1, 'Pronounce A', 1),
+(2, 1, 'Pronounce B', 1),
+(3, 1, 'Pronounce C', 1),
+(4, 1, 'D?', 2),
+(5, 1, 'Pronounce E', 1);
 
 -- --------------------------------------------------------
 
@@ -193,7 +146,8 @@ CREATE TABLE `type_question` (
 
 INSERT INTO `type_question` (`id`, `nom`) VALUES
 (1, 'Multiple Choice'),
-(2, 'True/False');
+(2, 'True/False'),
+(3, 'question/answer');
 
 -- --------------------------------------------------------
 
@@ -230,15 +184,10 @@ CREATE TABLE `utilisateur_niveau` (
   `id` int NOT NULL,
   `idutilisateur` int NOT NULL,
   `idniveau` int NOT NULL,
-  `idcourssuivant` int NOT NULL
+  `idcourstermine` int NOT NULL,
+  `datecreation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
-INSERT INTO `utilisateur_niveau` (`id`, `idutilisateur`, `idniveau`, `idcourssuivant`) VALUES
-(1, 1, 1, 2),
-(2, 1, 1, 3),
-(3, 1, 1, 4),
-(4, 2, 1, 2),
-(5, 2, 1, 3);
 -- --------------------------------------------------------
 
 --
@@ -330,7 +279,7 @@ ALTER TABLE `utilisateur_note`
 -- AUTO_INCREMENT pour la table `cours`
 --
 ALTER TABLE `cours`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur_niveau`
