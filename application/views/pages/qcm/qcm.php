@@ -208,7 +208,7 @@
 
                     <div class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
                         <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                            href="#">
+                            href="<?= base_url('Qcm/resultat')?>">
                             <span class="button-m d-flex justify-content-center align-items-center">
                                 <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
                                     <path

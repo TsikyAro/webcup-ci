@@ -28,7 +28,11 @@ class Qcm extends CI_Controller
     public function resultat()
 	{
 		$data['teams'] = 'CodeForce';
+		if(isset($_SESSION['user'])){
 
-		$this->template('resultat', $data);
+			$this->template('resultat', $data);
+		}else{
+			redirect(base_url('authentification/signin'));
+		}
 	}
 }

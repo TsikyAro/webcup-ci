@@ -21,6 +21,15 @@
         {
             $this->db->insert('utilisateur', $data);
         }
+        public function insertion_utilisateur_niveau($idniveau,$idutilisateur,$idcourstermine){
+            $data = array(
+                'idniveau'=>$idniveau,
+                'idutilisateur'=>$idutilisateur,
+                'idcourstermine'=>$idcourstermine
+            );
+            $this->db->insert('utilisateur_niveau', $data);
+            return $this->db->insert_id();
+        }
     
     }
 ?>

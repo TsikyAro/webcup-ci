@@ -22,6 +22,9 @@
 
 
             <div class="wrapper">
+                <?php if(isset($erreur)){?>
+                <p style="color:red"><?= $erreur?></p>
+                <?php }?>
                 <div class="root-blog section-margin ">
                     <div class="container ">
                         <div class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
@@ -54,7 +57,7 @@
                                         <p>Streamer fish California halibut Pacific saury. Slickhead grunion
                                             lake trout. Canthigaster rostrata spikefish…</p>
                                         <a href="<?= base_url('cours/ficheCours')?>?cours=<?=$cours[$i]->id?>"
-                                            class="effect-ajax link-vist p-relative mt-20">
+                                            class="link-vist p-relative mt-20">
 
                                             <span class="link-vist-text">Load More</span>
 

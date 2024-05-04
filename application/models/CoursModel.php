@@ -6,6 +6,18 @@ class CoursModel extends CI_Model{
         $query = $this->db->get('cours');
             return $query->result();
     }
+    public function get_all_cours_indice($user){
+        $query = $this->db->get_where('cours_utilisateur_indice',array('idutilisateur' => $user));
+            return $query->result();
+    }
+    public function get_cours_indice($idcours){
+        $query = $this->db->get_where('cours_utilisateur_indice',array('idcourstermine' => $idcours));
+            return $query->result();
+    }
+    public function get_niveau($cours){
+        $query = $this->db->get_where('cours',array('idcours' => $cours));
+            return $query->row();
+    }
     public function get_cours($ordre){
         $query = $this->db->get_where('cours',array('idcours' => $ordre));
             return $query->row();
