@@ -39,12 +39,11 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Data Tables</h1>
+            <h1>Zombie level tracking</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Tables</li>
-                    <li class="breadcrumb-item active">Data</li>
+                    <li class="breadcrumb-item"><a href="index.html">Zombie</a></li>
+                    <li class="breadcrumb-item">Level</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -55,26 +54,22 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Datatables</h5>
-                            <p>Add lightweight datatables to your project with using the <a
-                                    href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
-                                    DataTables</a> library. Just add <code>.datatable</code> class name to any table you
-                                wish to conver to a datatable</p>
+                            <h5 class="card-title">Level Monitoring</h5>
+                           
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <!-- <th scope="col"></th> -->
                                         <th scope="col">Name</th>
-                                        <th scope="col">Position</th>
-                                        <th scope="col">Age</th>
-                                        <th scope="col">Start Date</th>
+                                        <th scope="col">Level</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($utilisateurs as $utilisateur) { ?>
                                         <tr>
+                                            <!-- <td></td> -->
                                             <td><?php echo $utilisateur['Nom_Utilisateur']; ?></td>
                                             <td><?php echo $utilisateur['Niveau_Utilisateur']; ?></td>
                                         </tr>

@@ -57,17 +57,12 @@ CREATE OR REPLACE VIEW cours_par_user as
 SELECT 
     utilisateur.id AS id_utilisateur,
     utilisateur.pseudo AS pseudo_utilisateur,
-    cours.id AS id_cours,
-    cours.titre AS titre_cours,
-    cours.description AS description_cours,
-    cours.photo AS photo_cours,
-    cours.descriptioncourte AS description_courte_cours,
+    cours.*,
     CASE
         WHEN utilisateur_niveau.idcourstermine IS NOT NULL THEN 'Terminé'
         WHEN utilisateur_prochain_cours.prochain_cours IS NOT NULL THEN 'En cours'
         ELSE 'Non terminé'
-    END AS etat_cours,
-    cours.ordre
+    END AS etat_cours
 FROM 
     utilisateur
 CROSS JOIN 
@@ -104,3 +99,9 @@ LEFT JOIN
 ON 
     utilisateur.id = utilisateur_prochain_cours.idutilisateur
     ORDER BY cours.ordre;
+
+CREATE OR REPLACE VIEW Vue_Utilisateurs_Niveau AS
+SELECT utilisateur.nom AS Nom_Utilisateur, COALESCE(utilisateur_niveau.idniveau,0) AS Niveau_Utilisateur
+FROM utilisateur
+LEFT JOIN utilisateur_niveau ON utilisateur.id = utilisateur_niveau.idutilisateur
+where isadmin = false;
