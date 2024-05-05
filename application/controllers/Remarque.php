@@ -5,7 +5,7 @@ class Remarque extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('remarque_model');
+        $this->load->model('RemarqueModel');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
     }
@@ -26,7 +26,7 @@ class Remarque extends CI_Controller {
                 'contenu' => $this->input->post('message')
             );
 
-            if ($this->remarque_model->insert_remarque($data)) {
+            if ($this->RemarqueModel->insert_remarque($data)) {
                 redirect(base_url());
             } else {
                 redirect(base_url());
@@ -36,8 +36,8 @@ class Remarque extends CI_Controller {
     }
 
     public function remarks() {
-        $this->load->model('Remarque_model');
-        $data['remarks'] = $this->Remarque_model->get_All_Remark();
+        $this->load->model('RemarqueModel');
+        $data['remarks'] = $this->RemarqueModel->get_All_Remark();
         $this->load->view('pages/admin/remark', $data);
     }
 
