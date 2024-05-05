@@ -148,7 +148,7 @@
                     </div>
                     <?php endforeach;?>
 
-
+                    <?php if(!empty($questions)):?>
                     <div class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
                         <button class="next page-numbers d-flex align-items-center justify-content-center text-center"
                             type="submit">
@@ -162,6 +162,7 @@
                             </span>
                         </button>
                     </div>
+                    <?php endif;?>
                 </div>
             </div>
         </div>

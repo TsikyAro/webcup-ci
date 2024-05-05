@@ -39,7 +39,8 @@
                                 <div class="box-img over-hidden">
                                     <img class="cover-bg-img"
                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="assets/img/blog/1.jpg" alt="">
+                                        data-dsn-src="<?= base_url()?>assets/clients/assets/img/cours/<?= $cours[$i]->photo; ?>"
+                                        alt="">
                                 </div>
                                 <div class="box-content p-relative">
 
@@ -49,11 +50,11 @@
                                             <span><?= $cours[$i]->ordre ?></span>
                                         </div>
                                         <h4 class="title-block mb-20">
-                                            <a href="<?= base_url('coursOnline/fiche')?>" class="effect-ajax">Let's study
+                                            <a href="<?= base_url('coursOnline/fiche')?>?cours=<?=$cours[$i]->id?>"
+                                                class="">Let's study
                                                 <?= $cours[$i]->titre?></a>
                                         </h4>
-                                        <p>Streamer fish California halibut Pacific saury. Slickhead grunion
-                                            lake trout. Canthigaster rostrata spikefish…</p>
+                                        <p><?= $cours[$i]->descriptioncourte?></p>
                                         <?php if($cours[$i]->etat_cours != 'Terminé' ):?>
                                         <a href="<?= base_url('coursOnline/fiche')?>?cours=<?=$cours[$i]->id?>"
                                             class="link-vist p-relative mt-20">
@@ -70,50 +71,27 @@
                                             </div>
                                         </a>
                                         <?php endif;?>
+                                        <?php if($cours[$i]->etat_cours == 'Terminé' ):?>
+                                        <a href="<?= base_url('coursOnline/resultat')?>?idcours=<?=$cours[$i]->id?>"
+                                            class="link-vist p-relative mt-20">
+
+                                            <span class="link-vist-text">Result</span>
+
+                                            <div class="link-vist-arrow">
+                                                <svg viewBox="0 0 80 80">
+                                                    <polyline points="19.89 15.25 64.03 15.25 64.03 59.33">
+                                                    </polyline>
+                                                    <line x1="64.03" y1="15.25" x2="14.03" y2="65.18">
+                                                    </line>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        <?php endif;?>
                                     </div>
                                 </div>
                             </div>
                             <?php }?>
-
-
-
-                            <div
-                                class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
-                                <span
-                                    class="page-numbers border d-flex align-items-center justify-content-center text-center current ">
-                                    <span class="dsn-numbers">
-                                        <span class="number">1</span></span>
-                                </span>
-                                <a class="page-numbers border d-flex align-items-center justify-content-center text-center"
-                                    href="#">
-                                    <span class="dsn-numbers">
-                                        <span class="number">2</span>
-                                    </span>
-                                </a>
-
-                                <a class="page-numbers border d-flex align-items-center justify-content-center text-center"
-                                    href="#">
-                                    <span class="dsn-numbers">
-                                        <span class="number">3</span>
-                                    </span>
-                                </a>
-                                <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                                    href="#">
-                                    <span class="button-m d-flex justify-content-center align-items-center">
-                                        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%"
-                                            height="100%">
-                                            <path
-                                                d="M3 26.7h39.5v3.5c0 .3.1.5.4.6.2.1.5.1.7-.1l5.9-4.2c.2-.1.3-.3.3-.5s-.1-.4-.3-.5l-5.9-4.2c-.1-.1-.3-.1-.4-.1-.1 0-.2 0-.3.1-.2.1-.4.3-.4.6v3.5H3c-.4 0-.7.3-.7.7 0 .3.3.6.7.6z">
-                                            </path>
-                                        </svg>
-                                        <span>NEXT</span>
-                                    </span>
-                                </a>
-                            </div>
-
                         </div>
-
-
                     </div>
 
                 </div>

@@ -67,17 +67,17 @@ class Coursonline extends Base_Controller{
 		$idcours = $this->input->get('id_cours');
 		$arefaire = $this->input->get('arefaire');
 
-		if($arefaire == "true"){
-			$this->QcmReponseModel->delete([
-				'idqcmcours' => $idcours,
-				'idutilisateur' => $this->session->userdata('user')->id
-			]);
-		}
-		
 		$data['cours'] = $this->CoursModel->get_cours_by_id($idcours);
 		$data['questions'] = $this->QcmCoursModel->get_by_id_cours($idcours);
 
 		foreach ($data['questions'] as &$question) {
+			if($arefaire == "true"){
+				$condition = array(
+					'idqcmcours' => $question->id,
+					'idutilisateur' => $this->session->userdata('user')->id
+				);
+				$this->QcmReponseModel->delete($condition);
+			}
 			$question->reponses_possibles = $this->QcmReponseModel->get_by_id_question($question->id);
 		}
 
@@ -140,14 +140,22 @@ foreach ($resultats as $resultat) {
 $nombre_de_questions = count($resultats);
 $note = ($nombre_de_reponses_correctes / $nombre_de_questions) * 10;
 
-if($note>= 8 ){
-	$this->UtilisateurModel->insert_user_niveau(
-		array(
-			'idutilisateur' => $this->session->userdata('user')->id,
-			'idniveau' => $cours->idniveau,
-			'idcourstermine' => $idcours
-		));
-	
+$data['utilisateur_niveau'] = array(
+    'idutilisateur' => $this->session->userdata('user')->id,
+    'idniveau' => $cours->idniveau,
+    'idcourstermine' => $idcours
+);
+
+if($note>= 5 ){
+	$this->db->where($data['utilisateur_niveau']);
+$query = $this->db->get('utilisateur_niveau');
+
+if ($query->num_rows() == 0) {
+    // Aucune ligne trouvée, donc on peut insérer
+    if ($note >= 5) {
+        $this->UtilisateurModel->insert_user_niveau($data['utilisateur_niveau']);
+    }
+} 
 }
 $data['cours']= $cours;
 		$this->template('resultat_online', $data);
