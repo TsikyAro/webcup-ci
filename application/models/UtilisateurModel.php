@@ -44,5 +44,9 @@
 
         }
     
+        public function insert_user_niveau($data)
+        {
+            $this->db->insert('utilisateur_niveau', $data);
+        }
     }
 ?>

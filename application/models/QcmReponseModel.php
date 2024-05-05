@@ -6,4 +6,14 @@ class QcmReponseModel extends CI_Model{
         $query = $this->db->get_where('qcm_reponse', array('idquestion'=>$idquestion));
             return $query->result();
     }
+
+    public function insert($data)
+    {
+        $this->db->insert('qcm_reponse_utilisateur', $data);
+    }
+
+    public function delete($data)
+    {
+        $this->db->delete('qcm_reponse_utilisateur', $data);
+    }
 }

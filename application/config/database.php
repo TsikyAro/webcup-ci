@@ -71,8 +71,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $dev_database = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'username' => 'codeforce',
+	'password' => 'codeforce',
 	'database' => 'codeforce_admin',
 	'dbdriver' => 'mysqli',
 	'port' => '3306',

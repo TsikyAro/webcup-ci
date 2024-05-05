@@ -94,3 +94,12 @@ LEFT JOIN
 ON 
     utilisateur.id = utilisateur_prochain_cours.idutilisateur
     ORDER BY cours.ordre;
+
+CREATE OR REPLACE VIEW qcm_avec_les_bonnes_reponses AS
+SELECT qcm_cours.*, qcm_reponse.id AS id_reponse, qcm_reponse.reponse AS bonne_reponse FROM qcm_cours LEFT JOIN qcm_reponse ON qcm_cours.id = qcm_reponse.idquestion AND qcm_reponse.type = 1;
+
+
+
+CREATE OR REPLACE VIEW qcm_note as 
+
+SELECT qcm_vue.idcours, qcm_vue.question, qcm_vue.bonne_reponse, qcm_reponse_utilisateur.reponseutilisateur AS reponse_utilisateur, qcm_reponse_utilisateur.idutilisateur FROM qcm_avec_les_bonnes_reponses as qcm_vue LEFT JOIN qcm_reponse_utilisateur ON qcm_vue.id = qcm_reponse_utilisateur.idqcmcours;
