@@ -69,14 +69,4 @@ class Cours extends CI_Controller
 			$this->template('ficheCours', $data);
 	}
 
-	public function politesse()
-	{
-		$data['teams'] = 'CodeForce';
-		$this->template('politesse', $data);
-	}
-	public function nutrition()
-	{
-		$data['teams'] = 'CodeForce';
-		$this->template('nutrition', $data);
-	}
 }

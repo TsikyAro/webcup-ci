@@ -113,7 +113,7 @@
                                         const recognition = new(webkitSpeechRecognition || SpeechRecognition)
                                             (); // Support pour différents navigateurs
 
-                                        recognition.lang = 'fr-FR'; // Langue française
+                                        recognition.lang = 'en-EN'; // Langue française
 
                                         recognition.onstart = function () {
                                             // Ajouter l'animation pulse à l'icône du microphone lorsqu'il commence à écouter

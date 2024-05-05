@@ -39,7 +39,7 @@
                                 <div class="box-img over-hidden">
                                     <img class="cover-bg-img"
                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-dsn-src="assets/img/blog/1.jpg" alt="">
+                                        data-dsn-src="<?= base_url()?>assets/clients/assets/img/cours/<?= $cours[$i]->photo; ?>" alt="img">
                                 </div>
                                 <div class="box-content p-relative">
 
@@ -52,8 +52,7 @@
                                             <a href="<?= base_url('cours/ficheCours')?>" class="effect-ajax">Let's study
                                                 <?= $cours[$i]->titre?></a>
                                         </h4>
-                                        <p>Streamer fish California halibut Pacific saury. Slickhead grunion
-                                            lake trout. Canthigaster rostrata spikefish…</p>
+                                        <p><?= $cours[$i]->descriptioncourte?></p>
                                         <a href="<?= base_url('cours/ficheCours')?>?cours=<?=$cours[$i]->id?>"
                                             class="link-vist p-relative mt-20">
 
