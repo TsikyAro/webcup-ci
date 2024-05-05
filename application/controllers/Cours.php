@@ -33,7 +33,7 @@ class Cours extends CI_Controller
 	{
 		$data['teams'] = 'CodeForce';
 		$cour = $_GET['cours'];
-		$course = $this->CoursModel->get_all_cours_indice($this->session->userdata('user'));
+		$course = $this->CoursModel->get_all_cours_indice($this->session->userdata('user')->id);
 		if ($this->session->userdata('user') && $cour > 1 && $course!=null) {
 			$cours = $this->CoursModel->get_cours_by_id($cour);
 			$data['cours'] = $cours;

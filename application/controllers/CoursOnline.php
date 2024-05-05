@@ -21,7 +21,12 @@ class CoursOnline extends Base_Controller{
 		$data['teams'] = 'CodeForce';
         $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
         $data['cours'] = $cours1;
-        $_SESSION['cours'] = $cours1[0]->ordre;
+		if(empty($cours1)){
+			$_SESSION['cours'] = 1;
+
+		}else{
+			$_SESSION['cours'] = $cours1[0]->ordre;
+		};
 		$this->template('listCours', $data);
 	}
 
