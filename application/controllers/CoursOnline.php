@@ -2,10 +2,10 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 require_once('Base_Controller.php');
-class Coursonline extends Base_Controller{
+class CoursOnline extends Base_Controller{
 	public function __construct()
 	{
-		
+
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('CoursModel');
@@ -36,7 +36,7 @@ class Coursonline extends Base_Controller{
 		$go = $this->checker_prochain_cours($cour, $this->session->userdata('user')->id);
 		if(!$go){
 			$this->session->set_flashdata('message', 'You must finish the previous level to access the next one.');
-			redirect(base_url('coursonline'));
+			redirect(base_url('coursOnline'));
 		}
 			$data['cours'] = $this->CoursModel->get_cours_by_id($cour);
 			
@@ -118,7 +118,7 @@ class Coursonline extends Base_Controller{
         }
 
 		// Rediriger vers la page de résultat avec l'ID du cours en tant que paramètre GET
-		return redirect('/coursonline/resultat?idcours=' . $id_cours);
+		return redirect('/coursOnline/resultat?idcours=' . $id_cours);
 	}
 
 	public function resultat()

@@ -22,7 +22,7 @@ class Authentification extends CI_Controller
 	public function signin()
 	{
 		if ($this->session->user) {
-			redirect(site_url('coursonline'));
+			redirect(site_url('coursOnline'));
 		}
 		$data['teams'] = 'CodeForce';
 
@@ -32,7 +32,7 @@ class Authentification extends CI_Controller
 	public function signup()
 	{
 		if ($this->session->user) {
-			redirect(site_url('coursonline'));
+			redirect(site_url('coursOnline'));
 		}
 		$data['teams'] = 'CodeForce';
 
@@ -41,7 +41,7 @@ class Authentification extends CI_Controller
 
 	public function login(){
 		if ($this->session->user) {
-			redirect(site_url('coursonline'));
+			redirect(site_url('coursOnline'));
 		}
 		$data= [];
 		$this->form_validation->set_rules('pseudo', 'Pseudo', 'required');
@@ -56,7 +56,7 @@ class Authentification extends CI_Controller
 				if(isset($_SESSION['qcm'])){
 					redirect('Cours/resultat');
 				}else{
-					redirect(site_url('coursonline'));
+					redirect(site_url('coursOnline'));
 				}
 			} else {
 				$this->session->set_flashdata('message', 'Pseudo or Password is incorrect !');
