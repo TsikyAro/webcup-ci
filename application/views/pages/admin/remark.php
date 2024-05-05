@@ -33,11 +33,11 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Zombie level tracking</h1>
+            <h1>Zombie Remark</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Zombie</a></li>
-                    <li class="breadcrumb-item">Level</li>
+                    <li class="breadcrumb-item">Remark</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -47,22 +47,23 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Level Monitoring</h5>
+                            <h5 class="card-title">Message - Remark</h5>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     <tr>
                                         <!-- <th scope="col"></th> -->
                                         <th scope="col">Name</th>
-                                        <th scope="col">Level</th>
+                                        <th scope="col">E-mail</th>
+                                        <th scope="col">Content</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($utilisateurs as $utilisateur) { ?>
+                                    <?php foreach ($remarks as $remark) { ?>
                                         <tr>
-                                            <!-- <td></td> -->
-                                            <td><?php echo $utilisateur['Nom_Utilisateur']; ?></td>
-                                            <td><?php echo $utilisateur['Niveau_Utilisateur']; ?></td>
+                                            <td><?php echo $remark['nom']; ?></td>
+                                            <td><?php echo $remark['email']; ?></td>
+                                            <td><?php echo $remark['contenu']; ?></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

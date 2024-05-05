@@ -100,3 +100,11 @@ SELECT utilisateur.nom AS Nom_Utilisateur, COALESCE(utilisateur_niveau.idniveau,
 FROM utilisateur
 LEFT JOIN utilisateur_niveau ON utilisateur.id = utilisateur_niveau.idutilisateur
 where isadmin = false;
+
+CREATE VIEW Vue_Utilisateurs_Par_Niveau AS
+SELECT n.id AS id_niveau, n.nom AS nom_niveau, COALESCE(COUNT(u.id), 0) AS nombre_utilisateurs
+FROM niveau n
+LEFT JOIN utilisateur_niveau un ON n.id = un.idniveau
+LEFT JOIN utilisateur u ON un.idutilisateur = u.id
+GROUP BY n.id;
+
