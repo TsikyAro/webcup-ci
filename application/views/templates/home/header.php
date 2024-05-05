@@ -33,6 +33,6 @@
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-cursor-effect dsn-ajax">
 
 <?php
-// $this->load->view('templates/home/preloader.php');
+$this->load->view('templates/home/preloader.php');
 $this->load->view('templates/home/menu.php');
 ?>
