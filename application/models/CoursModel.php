@@ -37,4 +37,9 @@ class CoursModel extends CI_Model{
         $query = $this->db->get('cours');
         return $query->result();
     }
+
+    public function get_cours_from_me(){
+        $query = $this->db->get('cours');
+            return $query->result();
+    }
 }

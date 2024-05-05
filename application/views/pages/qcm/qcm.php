@@ -16,7 +16,6 @@
                         </div>
                     </div>
                 </header>
-                <?php echo '<pre>' . var_export($questions, true) . '</pre>';?>
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
@@ -80,7 +79,7 @@
                                 <h2 style="margin:20px">REPEAT THREE TIMES</h2>
                                 <div class="card" id="letterCard"
                                     style="width: 100px;border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
-                                    <div style="font-size: 24px;">A</div>
+                                    <div style="font-size: 24px;"><?= $question->reponses_possibles[0]->reponse ?></div>
                                 </div>
 
                                 <img style="cursor: pointer; width: 40px;background-color: green;"

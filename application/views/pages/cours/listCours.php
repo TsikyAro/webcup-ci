@@ -22,10 +22,8 @@
 
 
             <div class="wrapper">
-                <?php if(isset($erreur)){?>
-                <p style="color:red"><?= $erreur?></p>
-                <?php }?>
                 <div class="root-blog section-margin ">
+                    <?php $this->load->view('includes/messages_flash'); ?>
                     <div class="container ">
                         <div class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
                             <?php for($i = 0; $i< count($cours);$i++){?>

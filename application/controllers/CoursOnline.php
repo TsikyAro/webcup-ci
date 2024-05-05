@@ -23,7 +23,6 @@ class CoursOnline extends Base_Controller{
         $data['cours'] = $cours1;
 		if(empty($cours1)){
 			$_SESSION['cours'] = 1;
-
 		}else{
 			$_SESSION['cours'] = $cours1[0]->ordre;
 		};

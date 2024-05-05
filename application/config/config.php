@@ -27,7 +27,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 // $dev_base_url = 'https://codeforce.madagascar.webcup.hodi.host/';
 
-$dev_base_url = 'http://localhost/webcup-ci/';
+$dev_base_url = 'http://localhost:8080/webcup-ci-admin/';
 
 //  $dev_base_url = 'https://codeforce.madagascar.webcup.hodi.host/';
 
