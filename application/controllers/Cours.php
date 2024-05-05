@@ -69,4 +69,10 @@ class Cours extends CI_Controller
 			$this->template('ficheCours', $data);
 	}
 
+	public function feeling()
+	{
+		$data['teams'] = 'CodeForce';
+			$this->template('feeling', $data);
+	}
+
 }
