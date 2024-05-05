@@ -94,3 +94,9 @@ LEFT JOIN
 ON 
     utilisateur.id = utilisateur_prochain_cours.idutilisateur
     ORDER BY cours.ordre;
+
+CREATE OR REPLACE VIEW Vue_Utilisateurs_Niveau AS
+SELECT utilisateur.nom AS Nom_Utilisateur, COALESCE(utilisateur_niveau.idniveau,0) AS Niveau_Utilisateur
+FROM utilisateur
+LEFT JOIN utilisateur_niveau ON utilisateur.id = utilisateur_niveau.idutilisateur
+where isadmin = false;
