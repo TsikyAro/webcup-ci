@@ -28,7 +28,7 @@
                                             integrate harmoniously into human society
                                         <?php endif; ?>
                                     </p>
-                                    <a href="<?= base_url('cours/ficheCours')?>?cours=<?=$cours[0]->id?>"
+                                    <a href="<?= base_url('cours/ficheCours')?>?cours=1"
                                         class="mt-20 dsn-button has-border background-theme image-zoom dsn-load-animate"
                                         data-dsn="parallax">
                                         Get started

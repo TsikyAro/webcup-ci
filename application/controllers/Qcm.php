@@ -43,7 +43,7 @@ class Qcm extends CI_Controller
 		$data['teams'] = 'CodeForce';
 		$reps = $this->ResultatModel->getresultat($_SESSION['qcm']['cour'],$_SESSION['user']->id);
 		$reps = $this->QcmReponseModel->checknote($reps);
-		$data['resultat'] = $reps;
+		$data['resultats'] = $reps;
 		$this->template('resultat', $data);
 		
 	}
