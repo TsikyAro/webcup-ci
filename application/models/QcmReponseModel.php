@@ -29,7 +29,7 @@ class QcmReponseModel extends CI_Model{
     }
     public function checknote($tableau_resultat){
        for($i =0; $i<count($tableau_resultat);$i++){
-            if($tableau_resultat[$i]->reponseutilisateur == $tableau_resultat[$i]->reponse){
+            if($tableau_resultat[$i]->reponseutilisateur == $tableau_resultat[$i]->bonne_reponse){
                 $tableau_resultat[$i]->note = 10;
             }else{
                 $tableau_resultat[$i]->note = 0;

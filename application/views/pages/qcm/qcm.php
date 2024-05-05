@@ -19,7 +19,7 @@
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
-                <form id="contact-form" class="form" method="get" action="<?= base_url('Cours/resultat') ?>" data-toggle="validator">
+                <form id="contact-form" class="form" method="get" action="<?= base_url('CoursOnline/validate_qcm') ?>" data-toggle="validator">
                    <input type="hidden" name="cours" value="<?=$cours->id?>">
                 ]   <?php foreach($questions as $question):?>
                     <div class="root-blog section-margin ">
