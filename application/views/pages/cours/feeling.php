@@ -1,10 +1,10 @@
 <div class="politesse">
     <div class="content-hero p-relative d-flex align-items-center text-center flex-column">
         <h1 class="title mb-30 text-transform-upper dsn-load-animate">
-            NUTRITION
+            FEELING
         </h1>
         <p class="subtitle p-relative line-shap dsn-load-animate">
-            <span class="pl-10 pr-10 background-section">Eat human brain/Eat vegetables</span>
+            <span class="pl-10 pr-10 background-section">Gratitude/Envy</span>
         </p>
     </div>
     <br /><br />
@@ -15,17 +15,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Eat human </p>
+                                <p class="effect-ajax">Gratitude</p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/human.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/grace.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p>Eating human may lead to transmission of the zombie infection and contribute to the
-                                spread of the epidemic. Additionally, it may negatively impact already vulnerable human
-                                populations</p>
+                            <p>Zombies and humans can often get caught in a cycle of envy, desiring what others have rather than being grateful for what they already have. Gratitude helps cultivate a positive mindset, promoting contentment and satisfaction with what you have rather than constantly seeking more.</p>
                         </div>
                     </div>
                 </div>
@@ -34,16 +32,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Eat vegetables</p>
+                                <p class="effect-ajax">Envy</p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/legume.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/envy.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p>By opting for vegetables, you reduce the risk of disease transmission and respect the
-                                life and dignity of human beings.</p>
+                            <p>Envy can lead to feelings of frustration, resentment, and even jealousy toward others. For both zombies and humans, this can create a climate of unhealthy competition and constant discontent, compromising relationships and emotional well-being.</p>
                         </div>
                     </div>
                 </div>
@@ -54,7 +51,7 @@
 
     <div class="content-hero p-relative d-flex align-items-center text-center flex-column">
         <p class="subtitle p-relative line-shap dsn-load-animate">
-            <span class="pl-10 pr-10 background-section">Choose fish over other types of meat</span>
+            <span class="pl-10 pr-10 background-section">Compassion/Indifference</span>
         </p>
     </div>
 
@@ -66,18 +63,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Eat Fish</p>
+                                <p class="effect-ajax">Compassion</p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/fish.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/compassion.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p>Fish is a healthy and nutritious source of protein for zombies. It is less likely to be
-                                contaminated with diseases than human or animal meat. Additionally, fishing can be a
-                                more sustainable alternative to hunting other animals, helping to preserve the balance
-                                of the ecosystem.</p>
+                            <p>Showing compassion towards others, whether zombies or humans, promotes a feeling of connection and empathy. This encourages mutual aid and support, strengthening community bonds and fostering a more harmonious environment.</p>
                         </div>
                     </div>
                 </div>
@@ -86,15 +80,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Eat Brain</p>
+                                <p class="effect-ajax">Indifference</p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/brain.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/indifference.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p>It is more likely to be contaminated by diseases with human or animal meat.</p>
+                            <p>Indifference, the failure to care about others and their needs, can lead to a disorganized and fragmented society. Both zombies and humans may be tempted into indifference due to their own struggle for survival, but this can lead to isolation and deterioration of social relationships.</p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +99,7 @@
     <br /><br />
     <div class="content-hero p-relative d-flex align-items-center text-center flex-column">
         <p class="subtitle p-relative line-shap dsn-load-animate">
-            <span class="pl-10 pr-10 background-section">Food advice</span>
+            <span class="pl-10 pr-10 background-section">Trust/Mistrust</span>
         </p>
     </div>
 
@@ -117,17 +111,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Opt for foods rich in plant proteins</p>
+                                <p class="effect-ajax">Trust</p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/nut.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/trust.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p>By choosing foods rich in plant protein like beans, lentils, and tofu, zombies can get
-                                the nutrients they need to survive without putting their health at risk or increasing
-                                the risk of spreading disease.</p>
+                            <p>Trust is essential to building strong, mutually beneficial relationships. Both zombies and humans may be distrustful due to past experience or instinctive survival nature, but trust builds more resilient communities and fosters cooperation.</p>
                         </div>
                     </div>
                 </div>
@@ -136,17 +128,15 @@
                     <div class="box-content p-relative">
                         <div class="box-content-body">
                             <h4 class="title-block mb-20">
-                                <p class="effect-ajax">Prioritize fresh fruits and vegetables for optimal health</p>
+                                <p class="effect-ajax">Mistrust/p>
                             </h4>
                             <div class="content-img-fiche">
                                 <img class="img-fiche"
-                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/vegetables.jpg" alt=""
+                                    src="<?php echo base_url() ?>assets/clients/assets/img/fiche/mistrust.jpg" alt=""
                                     style="width:300px;height:300px;object-fit:cover">
                             </div>
                             <br />
-                            <p> Fresh fruits and vegetables are rich in vitamins, minerals and antioxidants, which
-                                can help strengthen zombies' immune systems and protect them against
-                                infections.</p>
+                            <p> Distrust can create a climate of fear and suspicion, leading to division and mutual distrust. For both zombies and humans, this can lead to isolation and a loss of opportunities for collaboration and mutual support.</p>
                         </div>
                     </div>
                 </div>
