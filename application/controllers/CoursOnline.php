@@ -5,6 +5,7 @@ require_once('Base_Controller.php');
 class Coursonline extends Base_Controller{
 	public function __construct()
 	{
+		
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('CoursModel');
