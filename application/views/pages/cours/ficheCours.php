@@ -1,3 +1,10 @@
+<?php 
+    if($cours->ordre==1){?>
+       <script>
+            localStorage.setItem('utilisateur', JSON.stringify(cours->ordre));
+       </script> 
+  <?php  }
+?>
 <main class="main-root">
     <div id="dsn-scrollbar">
         <div class="main-content">
@@ -33,7 +40,7 @@
                             
                             <div
                                 class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
-                                <span
+                                <!-- <span
                                     class="page-numbers border d-flex align-items-center justify-content-center text-center current ">
                                     <span class="dsn-numbers">
                                         <span class="number">1</span></span>
@@ -50,9 +57,9 @@
                                     <span class="dsn-numbers">
                                         <span class="number">3</span>
                                     </span>
-                                </a>
+                                </a> -->
                                 <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                                    href="#">
+                                    href="<?= base_url('Qcm')?>?id_cours=<?php echo $cours->id; ?>">
                                     <span class="button-m d-flex justify-content-center align-items-center">
                                         <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%"
                                             height="100%">

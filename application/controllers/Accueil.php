@@ -24,7 +24,7 @@ class Accueil extends CI_Controller
 		$this->load->model('CoursModel');
 
 		$data['logos'] = [
-			'24h-blanc-HD.png',
+			'24h-blanc-HD.webp',
 			'avana.jpg',
 			'etech.webp',
 			'ingenosya.webp',
@@ -34,7 +34,7 @@ class Accueil extends CI_Controller
 			'vivetic.webp',
 			'pa4h.webp',
 			'fulldigits-1.webp',
-			'telma.jpg',
+			'telma.webp',
 			'hodi.png',
 			'bocasay.webp',
 			'webcup.png'
@@ -44,22 +44,22 @@ class Accueil extends CI_Controller
 			[
 				'name' => 'Aro',
 				'fonction' => 'Developer',
-				'image' => '5.png',
+				'image' => '5.webp',
 			],
 			[
 				'name' => 'Tony',
 				'fonction' => 'Developer',
-				'image' => '8.png',
+				'image' => '8.webp',
 			],
 			[
 				'name' => 'Finaritra',
 				'fonction' => 'Developer',
-				'image' => '7.png',
+				'image' => '7.webp',
 			],
 			[
 				'name' => 'Tsiory',
 				'fonction' => 'Developer',
-				'image' => '6.png',
+				'image' => '6.webp',
 			],
 		];
 
@@ -67,19 +67,19 @@ class Accueil extends CI_Controller
 			[
 				'name' => 'Zed',
 				'fonction' => 'Transitioning Zombie',
-				'image' => 'zed.jpg',
+				'image' => 'zed.webp',
 				'parole' => 'HumanizeU equipped me with the necessary tools to successfully integrate into human society. Thanks to their interactive and informative courses, I feel more confident and competent in my daily interactions with humans.'
 			],
 			[
 				'name' => 'Zoé',
 				'fonction' => 'Learning Enthusiast Zombie',
-				'image' => 'zoe.jpg',
+				'image' => 'zoe.webp',
 				'parole' => "I am incredibly grateful to HumanizeU for helping me find my place in this new world. Their dedicated team supported me every step of my transformation, and now I'm proud to say that I'm a model citizen zombie!"
 			],
 			[
 				'name' => 'Zara',
 				'fonction' => 'Satisfied and Flourishing Zombie',
-				'image' => 'zara.jpg',
+				'image' => 'zara.webp',
 				'parole' => 'HumanizeU has exceeded all my expectations in learning and integration. Their courses are enriching and relevant, and I was able to immediately apply what I learned in my daily life. I highly recommend this platform to any zombies looking to integrate into human society.'
 			],
 		];

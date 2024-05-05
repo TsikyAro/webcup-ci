@@ -19,7 +19,7 @@ class CoursOnline extends Base_Controller{
 	}
     public function index(){
 		$data['teams'] = 'CodeForce';
-        $cours1 = $this->CoursModel->get_all_cours();
+        $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
         $data['cours'] = $cours1;
         $_SESSION['cours'] = $cours1[0]->ordre;
 		$this->template('listCours', $data);

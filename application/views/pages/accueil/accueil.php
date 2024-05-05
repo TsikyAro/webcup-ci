@@ -8,7 +8,7 @@
                         data-overlay="5">
                         <img class="cover-bg-img"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.webp"
                             alt="">
                     </div>
                     <div class="d-flex align-items-end pb-80 pt-80 h-100 dsn-container dsn-hero-parallax-title">
@@ -19,7 +19,7 @@
                                         class="subtitle dsn-load-animate line-shap line-shap-before d-inline-block mb-20">
                                         Learning & Transformation
                                     </div>
-                                    <h1 class="title dsn-load-animate">HumanizeU</h1>
+                                    <h1 class="title">HumanizeU</h1>
                                     <p class="mt-20 max-w570 dsn-load-animate">
                                         <?php if ($this->session->userdata('user')): ?>
                                             Hello <?php echo $this->session->userdata('user')->nom; ?> !
@@ -113,7 +113,7 @@
                                             data-overlay="3">
                                             <img class="cover-bg-img "
                                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/pexels-imustbedead-10916168.jpg"
+                                                data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/pexels-imustbedead-10916168.webp"
                                                 alt="">
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@
                     <div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
                         <img class="transform-3d has-bigger-scale"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.jpg"
+                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/accueil/mathieu-stern-ucqhzAtILQw-unsplash.webp"
                             alt="">
                     </div>
                     <div class="pro-text background-section box-padding" data-dsn-grid="move-section"
@@ -370,7 +370,7 @@
                                                     <img class="cover-bg-img"
                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                         data-dsn-src="<?php echo base_url() ?>assets/team/<?php echo $team['image']; ?>"
-                                                        alt="">
+                                                        alt="<?php echo $team['name']; ?>" width=50 height=50>
                                                 </div>
                                                 <div class="box-text">
                                                     <h4 class="sm-title-block mb-5"><?php echo $team['name']; ?></h4>
