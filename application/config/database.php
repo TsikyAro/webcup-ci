@@ -67,12 +67,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | The $active_group variable lets you choose which connection group to
 | make active.  By default there is only one group (the 'default' group).
 */
+
 $dev_database = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'codeforce_admin',
+	'database' => 'zombi',
 	'dbdriver' => 'mysqli',
 	'port' => '3306',
 	'dbprefix' => '',
@@ -89,27 +90,5 @@ $dev_database = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-// $dev_database = array(
-// 	'dsn'	=> '',
-//     'hostname' => 'localhost',
-//     'username' => 'codeforce_codeforce',
-//     'password' => 'Codeforce2024!',
-//     'database' => 'codeforce_admin',
-//     'dbdriver' => 'mysqli',
-// 	// 'port' => '2083',
-// 	'dbprefix' => '',
-// 	'pconnect' => FALSE,
-// 	'db_debug' => (ENVIRONMENT !== 'production'),
-// 	'cache_on' => FALSE,
-// 	'cachedir' => '',
-// 	'char_set' => 'utf8',
-// 	'dbcollat' => 'utf8_general_ci',
-// 	'swap_pre' => '',
-// 	'encrypt' => FALSE,
-// 	'compress' => FALSE,
-// 	'stricton' => FALSE,
-// 	'failover' => array(),
-// 	'save_queries' => TRUE
-// );
 $active_group = 'default';
 $db['default'] = $dev_database;

@@ -39,11 +39,10 @@ class Qcm extends CI_Controller
     public function resultat()
 	{
 		$data['teams'] = 'CodeForce';
-		if(isset($_SESSION['user'])){
-
-			$this->template('resultat', $data);
-		}else{
-			redirect(base_url('authentification/signin'));
-		}
+		$reps = $this->QcmReponseModel->get_resultat_qcm($_SESSION['qcm']['cour'],$_SESSION['user']->id);
+		$reps = $this->QcmReponseModel->checknote($reps);
+		$data['resultat'] = $reps;
+		$this->template('resultat', $data);
+		
 	}
 }

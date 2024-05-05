@@ -9,7 +9,7 @@
     </div>
     <br/><br/>
     <div class="container">
-        <div class="image-response">
+        <div class="image-response" style="margin-left: 20vw;">
             <div class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
                 <div class="blog-item p-relative d-flex align-items-center" data-swiper-parallax-scale="0.85">
                     <div class="box-content p-relative">
@@ -52,7 +52,7 @@
 
     <br/><br/>
     <div class="container">
-        <div class="image-response">
+        <div class="image-response" style="margin-left: 20vw;">
             <div class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
                 <div class="blog-item p-relative d-flex align-items-center" data-swiper-parallax-scale="0.85">
                     <div class="box-content p-relative">
@@ -95,7 +95,7 @@
 
     <br/><br/>
     <div class="container">
-        <div class="image-response">
+        <div class="image-response" style="margin-left: 20vw;">
             <div class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
                 <div class="blog-item p-relative d-flex align-items-center" data-swiper-parallax-scale="0.85">
                     <div class="box-content p-relative">

@@ -19,7 +19,9 @@
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
-                    <?php foreach($questions as $question):?>
+                <form id="contact-form" class="form" method="get" action="<?= base_url('Cours/resultat') ?>" data-toggle="validator">
+                   <input type="hidden" name="cours" value="<?=$cours->id?>">
+                ]   <?php foreach($questions as $question):?>
                     <div class="root-blog section-margin ">
                         <div class="form-box">
                             <div class="mb-30 d-flex text-left flex-column align-items-start">
@@ -28,21 +30,21 @@
                                 </p>
                             </div>
                             <?php if($question->idtype == 3):?>
-                            <form id="contact-form" class="form" method="post" action="contact.php"
-                                data-toggle="validator">
+                            <!-- <form id="contact-form" class="form" method="post" action="contact.php" -->
+                                <!-- data-toggle="validator"> -->
                                 <div class="messages"></div>
                                 <div class="input__wrap controls">
                                     <div class="form-group">
                                         <div class="entry-box">
                                             <label>Your answer *</label>
-                                            <input id="form_name" type="text" name="answer"
+                                            <input id="form_name" type="text" 
                                                 placeholder="Type your answer" required="required"
-                                                data-error="answer is required." />
+                                                data-error="answer is required." name="reponses[<?= $question->id ?>]" />
                                         </div>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                            </form>
+                            <!-- </form> -->
                             <?php endif;?>
                             <?php if($question->idtype == 1 || $question->idtype == 2):?>
 
@@ -55,10 +57,8 @@
                                             <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
                                                 data-swiper-parallax-scale="0.85">
                                                 <label>
-                                                    <input class="radio-container" type="radio" name="article"
+                                                    <input class="radio-container" type="radio" name="reponses[<?= $question->id ?>]" name="article"
                                                         value="article1">
-
-
                                                     <img class="cover-bg-img"
                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                         data-dsn-src="<?= base_url()?>assets/clients/assets/img/answer/<?= $reponse->image; ?>"
@@ -86,12 +86,19 @@
                                     src="<?= base_url('assets/img/microphone-icon.png') ?>" alt="Microphone"
                                     id="microphoneBtn" class="microphone-icon">
                                 <div id="output" style="margin-top: 10px; font-size: 24px;"></div>
-
+                                <div id="hu"></div>
                                 <script>
                                     const letterCard = document.getElementById('letterCard');
                                     const microphoneBtn = document.getElementById('microphoneBtn');
                                     const outputDiv = document.getElementById('output');
-
+                                    
+                                    var hiddenInput = document.createElement('input');
+                                    hiddenInput.setAttribute('id', 'reponse_vocale');
+                                    hiddenInput.setAttribute('type', 'hidden');
+                                    hiddenInput.setAttribute('name', 'reponses[<?= $question->id ?>]');
+                                    // hiddenInput.setAttribute('placeholder', 'huhuhuuu');
+                                    hiddenInput.setAttribute('value', <?= $question->reponses_possibles[0]->reponse ?>);
+                                    document.getElementById('contact-form').appendChild(hiddenInput);
                                     // Fonction pour changer la couleur de la carte en fonction de la lettre détectée
                                     function changeColor(letter) {
                                         if (letter === 'A') {
@@ -106,7 +113,7 @@
                                         const recognition = new(webkitSpeechRecognition || SpeechRecognition)
                                             (); // Support pour différents navigateurs
 
-                                        recognition.lang = 'fr-FR'; // Langue française
+                                        recognition.lang = 'en-EN'; // Langue française
 
                                         recognition.onstart = function () {
                                             // Ajouter l'animation pulse à l'icône du microphone lorsqu'il commence à écouter
@@ -126,7 +133,7 @@
                                                 firstLetter
                                             ); // Affichage dans la console de la première lettre détectée
                                             outputDiv.textContent = firstLetter;
-
+                                            hiddenInput.setAttribute('value', firstLetter);
                                             // Vérifier si la lettre A a été prononcée
                                             if (firstLetter === 'A') {
                                                 changeColor('A');
@@ -153,23 +160,38 @@
                             <?php endif;?>
                         </div>
                     </div>
-                    <?php endforeach;?>
-
-
+                    <?php endforeach;?> 
+                </form>
                     <div class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
                         <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                            href="<?= base_url('Qcm/resultat')?>">
-                            <span class="button-m d-flex justify-content-center align-items-center">
+                           href="#">
+                            <button  type="submit"class="button-m d-flex justify-content-center align-items-center">
                                 <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
                                     <path
                                         d="M3 26.7h39.5v3.5c0 .3.1.5.4.6.2.1.5.1.7-.1l5.9-4.2c.2-.1.3-.3.3-.5s-.1-.4-.3-.5l-5.9-4.2c-.1-.1-.3-.1-.4-.1-.1 0-.2 0-.3.1-.2.1-.4.3-.4.6v3.5H3c-.4 0-.7.3-.7.7 0 .3.3.6.7.6z">
                                     </path>
                                 </svg>
                                 <span>NEXT</span>
-                            </span>
+                                </button>
                         </a>
                     </div>
                 </div>
+                <script>
+                    // Récupération du formulaire
+                    const form = document.getElementById('contact-form');
+
+                    // Récupération du lien "NEXT"
+                    const nextLink = document.querySelector('.next');
+
+                    // Ajout d'un écouteur d'événement sur le lien "NEXT"
+                    nextLink.addEventListener('click', function(event) {
+                        // Empêcher le comportement par défaut du lien
+                        event.preventDefault();
+                        
+                        // Soumettre le formulaire
+                        form.submit();
+                    });
+                </script>
             </div>
         </div>
     </div>

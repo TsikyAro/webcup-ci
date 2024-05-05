@@ -7,7 +7,12 @@ class QcmCoursModel extends CI_Model{
             return $query->result();
     }
 
+
     public function count_qcm() {
         return $this->db->count_all_results('qcm_cours');
     }
+
+    
+    
+
 }

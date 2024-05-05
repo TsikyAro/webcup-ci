@@ -20,6 +20,11 @@ select ordre,titre,idcourstermine,idutilisateur,
     END as indice
 from cours_utilisateur;
 
+create or replace view resultat_qcm as
+select qru.*,qc.question,qr.reponse,qc.idcours from qcm_reponse_utilisateur qru 
+    join qcm_cours qc on  qru.idqcmcours = qc.id 
+    join qcm_reponse qr on qr.idquestion=qru.idqcmcours  ; 
+
 
 --tsiory
 
