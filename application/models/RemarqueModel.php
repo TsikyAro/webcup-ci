@@ -9,7 +9,6 @@ class Remarque_model extends CI_Model {
     public function get_All_Remark() {
         $query = $this->db->get('remarque');
         return $query->result_array();
-
     }
 }
 ?>
