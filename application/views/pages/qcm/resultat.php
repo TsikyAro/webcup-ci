@@ -1,5 +1,5 @@
 <?php
-$note = 8;
+$note = 3;
 ?>
 
 
@@ -19,27 +19,18 @@ $note = 8;
                     <th>QCM</th>
                     <th>Answer</th>
                     <th>Details</th>
+                    <th>Mark</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>True</td>
-                    <td>Centro comercial Moctezuma Francisco Chang Mexicooo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td style="color:#760d0d">False</td>
-                    <td>Centro comercial Moctezuma Francisco Chang Mexicooo</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td style="color:#760d0d">False</td>
-                    <td>Centro comercial Moctezuma Francisco Chang Mexicooo</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>True</td>
-                    <td>Centro comercial Moctezuma Francisco Chang Mexicooo</td>
-                </tr>
+                <?php for($i=0; $i<count($resultat);$i++){?>
+                    <tr>
+                        <td><?= $resultat[$i]->idqcmcours?></td>
+                        <td><?= $resultat[$i]->reponseutilisateur?></td>
+                        <td><?= $resultat[$i]->question?></td>
+                        <td><?= $resultat[$i]->note?></td>
+                        <?php //$note = $resultat[$i]->note?>
+                    </tr>
+                <?php }?>
+                
             </table>
         </div>
         <div class="box-awards-item has-border dsn-up ">

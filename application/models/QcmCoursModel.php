@@ -6,4 +6,6 @@ class QcmCoursModel extends CI_Model{
         $query = $this->db->get_where('qcm_cours', array('idcours'=>$idcours));
             return $query->result();
     }
+    
+    
 }

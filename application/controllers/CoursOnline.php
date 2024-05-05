@@ -19,7 +19,8 @@ class CoursOnline extends Base_Controller{
 	}
     public function index(){
 		$data['teams'] = 'CodeForce';
-        $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
+        // $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
+        $cours1 = $this->CoursModel->get_all_cours();
         $data['cours'] = $cours1;
 		if(empty($cours1)){
 			$_SESSION['cours'] = 1;
