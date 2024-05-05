@@ -4676,12 +4676,9 @@ header .scroll-d img {
 -------------------------------------------------------- */
 .form-box {
   position: relative;
-  padding: 40px;
 }
 @media only screen and (max-width: 575px) {
-  .form-box {
-    padding: 40px 20px;
-  }
+ 
 }
 .form-box .form-group {
   width: 100%;

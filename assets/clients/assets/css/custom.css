@@ -1,122 +1,155 @@
 .qcm .entry-box {
-  width: 40%;
-  margin-left: 5vw;
+    width: 40%;
+    margin-left: 5vw;
 }
 
 .qcm .image-response .our-blog-full-img {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .qcm .list-unstyled {
-  margin-left: 5vw;
+    margin-left: 5vw;
 }
 
 .radio-container {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .signin .box-contact-inner.section-padding {
-  margin-left: 5vw;
-  display: flex;
-  justify-content: center;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
 }
 
 .img-signin {
-  height: 60vh;
+    height: 60vh;
 }
 
 .img-signup {
-  height: 85vh;
-  object-fit: cover;
+    height: 85vh;
+    object-fit: cover;
 }
 
 #result {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
 }
 
 #result td,
 #result th {
-  /* border: 1px solid #ddd; */
-  padding: 8px;
+    /* border: 1px solid #ddd; */
+    padding: 8px;
 }
 
 #result th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #106e0152;
-  color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #106e0152;
+    color: white;
 }
 
 .result-content {
-  margin-top: 3vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-top: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .result {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .counter {
-  animation: countTo 2s ease-in-out forwards; /* Applique l'animation */
+    animation: countTo 2s ease-in-out forwards;
+    /* Applique l'animation */
 }
 
 @keyframes countTo {
-  from {
-    content: "0";
-  } /* Démarre à 0 */
-  to {
-    content: "100";
-  } /* Se termine à 100 (vous pouvez changer cette valeur selon vos besoins) */
+    from {
+        content: "0";
+    }
+
+    /* Démarre à 0 */
+    to {
+        content: "100";
+    }
+
+    /* Se termine à 100 (vous pouvez changer cette valeur selon vos besoins) */
 }
 
 .icon-zombi {
-  width: 4vw;
+    width: 4vw;
 }
 
 .point {
-  display: flex;
-  gap: 18vw;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    gap: 18vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .warning {
-  color: #ffecb5;
-  margin-bottom: 25px;
+    color: #ffecb5;
+    margin-bottom: 25px;
 }
 
 .error {
-  color: red;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 15px;
+    color: red;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .success {
-  color: green;
-  font-weight: 600;
+    color: green;
+    font-weight: 600;
 }
 
 #ecoindex-badge-link {
-  align-items: center;
-  border-radius:none !important;
-  display: flex;
-  font-size: 13px;
-  gap: 0.85em;
-  padding: 0.5em 0.5em 0.5em 0.8em;
-  text-decoration: none;
-  background-color: #0d2e38;
-  color: #fff;
+    align-items: center;
+    border-radius: none !important;
+    display: flex;
+    font-size: 13px;
+    gap: 0.85em;
+    padding: 0.5em 0.5em 0.5em 0.8em;
+    text-decoration: none;
+    background-color: #0d2e38;
+    color: #fff;
+}
+
+.content-img-fiche{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content:center;
+}
+
+.img-fiche{
+    height:300px;
+    width: 300px;
+}
+
+.our-blog.our-blog-classic.our-blog-full-img .box-content{
+    padding: 30px;
+}
+
+.politesse .d-grid:not(.dsn-isotope):not(.align-items-center)
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.politesse .dsn-posts .blog-item .title-block{
+    max-width: 100%!important;
 }
