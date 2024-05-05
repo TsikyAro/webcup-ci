@@ -17,7 +17,7 @@ class Remarque extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             // Validation failed, show the form again with validation errors
-            // $this->load->view('');
+            redirect(base_url());
         } else {
             // Validation passed, proceed with inserting data into database
             $data = array(
@@ -27,11 +27,9 @@ class Remarque extends CI_Controller {
             );
 
             if ($this->remarque_model->insert_remarque($data)) {
-                // Insertion successful
-                echo "Data inserted successfully.";
+                redirect(base_url());
             } else {
-                // Insertion failed
-                echo "Failed to insert data.";
+                redirect(base_url());
             }
         }
         redirect(base_url());
