@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 require_once('Base_Controller.php');
-class CoursOnline extends Base_Controller{
+class Coursonline extends Base_Controller{
 	public function __construct()
 	{
 		parent::__construct();
