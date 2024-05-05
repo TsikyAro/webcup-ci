@@ -6,7 +6,7 @@ class Remarque extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('RemarqueModel');
-        // $this->load->helper(array('form', 'url'));
+        $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
     }
 
@@ -27,10 +27,10 @@ class Remarque extends CI_Controller {
             );
 
             if ($this->RemarqueModel->insert_remarque($data)) {
-                redirect(base_url());
+                // redirect(site_url());
 
             } else {
-                // redirect(base_url());
+                // redirect(site_url());
             }
         }
         redirect(base_url());
