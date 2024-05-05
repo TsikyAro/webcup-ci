@@ -2900,11 +2900,11 @@ body:not(.dsn-line-style).nav-bg.hide-nav .site-header {
   top: 0;
 }
 .our-blog.our-blog-classic.our-blog-full-img .box-content {
-  padding: 80px 30px;
+  padding: 30px 30px;
 }
 @media only screen and (max-width: 991px) {
   .our-blog.our-blog-classic.our-blog-full-img .box-content {
-    padding: 50px 30px;
+    padding: 10px 30px;
   }
 }
 .our-blog .swiper-slide-next,
