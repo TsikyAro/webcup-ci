@@ -20,15 +20,16 @@
 
                         <?php $this->load->view('includes/messages_flash'); ?>
 
-                        <form  class="form" method="post" action="<?php echo site_url('Authentification/inscription') ?>" data-toggle="validator">
+                        <form class="form" method="post" action="<?php echo site_url('Authentification/inscription') ?>"
+                            data-toggle="validator">
                             <div class="messages"></div>
                             <div class="input__wrap controls">
                                 <div class="form-group">
                                     <div class="entry-box">
                                         <label>Your name *</label>
                                         <input id="form_name" type="text" name="name" placeholder="Type your name"
-                                        value="<?php echo set_value('name'); ?>"
-                                            required="required" data-error="name is required." />
+                                            value="<?php echo set_value('name'); ?>" required="required"
+                                            data-error="name is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
                                     <?php echo form_error('name', '<div class="error">', '</div>'); ?>
@@ -37,8 +38,8 @@
                                     <div class="entry-box">
                                         <label>Your pseudo *</label>
                                         <input id="form_name" type="text" name="pseudo" placeholder="Type your pseudo"
-                                        value="<?php echo set_value('pseudo'); ?>"
-                                            required="required" data-error="pseudo is required." />
+                                            value="<?php echo set_value('pseudo'); ?>" required="required"
+                                            data-error="pseudo is required." />
                                     </div>
                                     <div class="help-block with-errors"></div>
                                     <?php echo form_error('pseudo', '<div class="error">', '</div>'); ?>
@@ -66,10 +67,16 @@
                                     <?php echo form_error('confirmpassword', '<div class="error">', '</div>'); ?>
                                 </div>
 
-                                <div class="text-right">
-                                    <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                                        <input type="submit" value="SIGN UP"
-                                            class="dsn-button background-main border-radius">
+                                <div class="butt-auth" style="display: flex; width:100%; gap:30vw">
+                                    <a class="dsn-button background-main border-radius"
+                                        href="../authentification/signin" width=30px style="text-wrap: nowrap;">
+                                        SIGN IN
+                                    </a>
+                                    <div class="text-right">
+                                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                                            <input type="submit" value="SIGN UP"
+                                                class="dsn-button background-main border-radius">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

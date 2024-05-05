@@ -6,4 +6,5 @@ class NiveauModel extends CI_Model{
         $query = $this->db->get('niveau');
             return $query->result();
     }
+    
 }

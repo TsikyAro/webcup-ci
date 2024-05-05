@@ -20,7 +20,7 @@ class CoursModel extends CI_Model{
             return $query->result();
     }
     public function get_niveau($cours){
-        $query = $this->db->get_where('cours',array('idcours' => $cours));
+        $query = $this->db->get_where('cours',array('id' => $cours));
             return $query->row();
     }
     public function get_cours($ordre){
@@ -47,4 +47,9 @@ class CoursModel extends CI_Model{
         $query = $this->db->get('cours');
             return $query->result();
     }
+
+    public function count_cours() {
+        return $this->db->count_all_results('cours');
+    }
+
 }

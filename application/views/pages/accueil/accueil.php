@@ -28,7 +28,7 @@
                                             integrate harmoniously into human society
                                         <?php endif; ?>
                                     </p>
-                                    <a href="#"
+                                    <a href="<?= base_url('cours/ficheCours')?>?cours=<?=$cours[0]->id?>"
                                         class="mt-20 dsn-button has-border background-theme image-zoom dsn-load-animate"
                                         data-dsn="parallax">
                                         Get started
@@ -217,23 +217,15 @@
                         data-dsn-responsive="tablet">
                         <div class="mb-30 d-flex text-left flex-column align-items-start">
                             <p class="sub-heading line-shap line-shap-after mb-15">
-                                <span class="line-bg-right">Build perfect websites</span>
+                                <span class="line-bg-right">Cour</span>
                             </p>
-                            <h2 class="section-title">Unlimited power</h2>
+                            <h2 class="section-title"><?= $cours[0]->titre ?></h2>
 
                         </div>
-
-
-                        <p class="mb-10">
-                            Most of our writings have centered on implementing strategies for business
-                            units, with their unique
-                        </p>
                         <p>
-                            geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost
-                            his
-                            bottle pear shaped bugger all mate</p>
+                        <?= $cours[0]->descriptioncourte ?></p>
 
-                        <a href="#0" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
+                        <a href="<?php echo site_url();?>cours/listCours" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
                             <span class="dsn-border border-color-reverse-color"></span>
                             More Projects <span>⟶</span>
                         </a>
@@ -417,7 +409,7 @@
                                             <div class="box-img over-hidden">
                                                 <img class="cover-bg-img"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="assets/img/blog/1.jpg" alt="">
+                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/cours/<?= $cour->photo ?>"alt="img">
                                             </div>
                                             <div class="box-content p-relative">
 
@@ -429,7 +421,7 @@
                                                         <a href="#"><?= $cour->titre ?></a>
                                                     </h4>
                                                     <p><?= $cour->descriptioncourte ?></p>
-                                                    <a href="#" class="link-vist p-relative mt-20">
+                                                    <a href="<?php echo site_url();?>cours/listCours" class="link-vist p-relative mt-20">
 
                                                         <span class="link-vist-text">Load More</span>
 

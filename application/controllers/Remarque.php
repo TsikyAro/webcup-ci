@@ -36,5 +36,13 @@ class Remarque extends CI_Controller {
         }
         redirect(base_url());
     }
+
+    public function remarks() {
+        $this->load->model('Remarque_model');
+        $data['remarks'] = $this->Remarque_model->get_All_Remark();
+        $this->load->view('pages/admin/remark', $data);
+    }
+
+
 }
 ?>

@@ -6,5 +6,11 @@ class Remarque_model extends CI_Model {
         $this->db->insert('remarque', $data);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
+
+    public function get_All_Remark() {
+        $query = $this->db->get('remarque');
+        return $query->result_array();
+
+    }
 }
 ?>

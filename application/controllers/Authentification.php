@@ -50,9 +50,14 @@ class Authentification extends CI_Controller
 			$this->template('signin',$data);
 		} else {
 			$data = $this->UtilisateurModel->login($this->input->post('pseudo'), $this->input->post('password'));
+			// var_dump($data);
 			if ($data) {
 				$this->session->set_userdata('user', $data);
-				redirect(site_url('coursonline'));
+				if(isset($_SESSION['qcm'])){
+					redirect('Cours/resultat');
+				}else{
+					redirect(site_url('coursonline'));
+				}
 			} else {
 				$this->session->set_flashdata('message', 'Pseudo or Password is incorrect !');
 				$this->template('signin',$data);
