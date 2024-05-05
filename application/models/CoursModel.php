@@ -47,4 +47,9 @@ class CoursModel extends CI_Model{
         $query = $this->db->get('cours');
             return $query->result();
     }
+
+    public function count_cours() {
+        return $this->db->count_all_results('cours');
+    }
+
 }

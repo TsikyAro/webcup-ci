@@ -60,13 +60,13 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form method="post" action="" class="row g-3 needs-validation" novalidate>
+                  <form method="post" action="<?= base_url('admin/login_process') ?>" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">USER</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="pseudo" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>

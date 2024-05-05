@@ -6,13 +6,15 @@ class CoursOnline extends Base_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-        $this->load->model('CoursModel');
 		$this->load->database();
+		$this->load->model('CoursModel');
+        $this->load->model('ResultatModel');
 		$this->load->model('QcmCoursModel');
 		$this->load->model('QcmReponseModel');
+		$this->load->model('UtilisateurModel');
 	}
 	public function template($page, $data){
-		if (!file_exists(APPPATH . 'views/pages/' . $page . '.php')) {
+		if (!file_exists(APPPATH . 'views/pages/cours/' . $page . '.php')) {
 			// show_404();
 		}
 
@@ -22,6 +24,9 @@ class CoursOnline extends Base_Controller{
 	}
     public function index(){
 		$data['teams'] = 'CodeForce';
+<<<<<<< HEAD
+        $data['cours'] = $this->CoursModel->get_cours_user($this->session->userdata('user')->id);
+=======
         // $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
         // $cours1 = $this->CoursModel->get_all_cours();
         // $data['cours'] = $cours1;
@@ -33,6 +38,7 @@ class CoursOnline extends Base_Controller{
 		// $this->template('listCours', $data);
         $data[
 			'cours'] = $this->CoursModel->get_cours_user($this->session->userdata('user')->id);
+>>>>>>> e412f62a10dc741a547ba85cfe09e77addbb672b
 		$this->template('listCours_online', $data);
 	}
 
@@ -73,6 +79,15 @@ class CoursOnline extends Base_Controller{
 		$data['teams'] = 'CodeForce';
 
 		$idcours = $this->input->get('id_cours');
+		$arefaire = $this->input->get('arefaire');
+
+		if($arefaire == "true"){
+			$this->QcmReponseModel->delete([
+				'idqcmcours' => $idcours,
+				'idutilisateur' => $this->session->userdata('user')->id
+			]);
+		}
+		
 		$data['cours'] = $this->CoursModel->get_cours_by_id($idcours);
 		$data['questions'] = $this->QcmCoursModel->get_by_id_cours($idcours);
 
@@ -81,6 +96,75 @@ class CoursOnline extends Base_Controller{
 		}
 
 		$this->template('qcm', $data);
+	}
+
+	public function validate_qcm()
+	{
+		$question_ids = $this->input->post('question_id');
+		$answers = $this->input->post('answer');
+
+		$question_answer_pairs = [];
+
+		// Parcourir les identifiants de question
+		foreach ($question_ids as $question_id) {
+			// Vérifier si une réponse existe pour cette question
+			if (isset($answers[$question_id])) {
+				// Stocker la paire question_id - réponse
+				$question_answer_pairs[$question_id] = $answers[$question_id];
+			} else {
+				// Si aucune réponse n'est fournie, stocker null comme réponse
+				$question_answer_pairs[$question_id] = null;
+			}
+		}
+
+		$id_cours = $this->input->post('coursid');
+		foreach ($question_answer_pairs as $question_id => $answer) {
+            // Créer un tableau de données à insérer en base de données
+            $data = array(
+                'idqcmcours' => $question_id,
+                'reponseutilisateur' => $answer,
+				'idutilisateur' => $this->session->userdata('user')->id
+            );
+
+            // Insérer les données en base de données à l'aide du modèle Reponse_model
+            $this->QcmReponseModel->insert($data);
+        }
+
+		// Rediriger vers la page de résultat avec l'ID du cours en tant que paramètre GET
+		return redirect('/coursonline/resultat?idcours=' . $id_cours);
+	}
+
+	public function resultat()
+	{
+		$idcours = $this->input->get('idcours');
+		$cours = $this->CoursModel->get_cours_by_id($idcours);
+	$data['resultats'] = $this->ResultatModel->getresultat($idcours,$this->session->userdata('user')->id);
+		$resultats = $data['resultats'];
+	$nombre_de_reponses_correctes = 0;
+
+// Calculer le nombre de réponses correctes
+foreach ($resultats as $resultat) {
+    // Vérifier si la réponse de l'utilisateur est correcte
+    if ($resultat->bonne_reponse == $resultat->reponseutilisateur) {
+        $nombre_de_reponses_correctes++;
+    }
+}
+
+// Calculer la note sur 10
+$nombre_de_questions = count($resultats);
+$note = ($nombre_de_reponses_correctes / $nombre_de_questions) * 10;
+
+if($note>= 8 ){
+	$this->UtilisateurModel->insert_user_niveau(
+		array(
+			'idutilisateur' => $this->session->userdata('user')->id,
+			'idniveau' => $cours->idniveau,
+			'idcourstermine' => $idcours
+		));
+	
+}
+$data['cours']= $cours;
+		$this->template('resultat_online', $data);
 	}
 
 

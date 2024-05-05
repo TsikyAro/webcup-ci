@@ -43,6 +43,20 @@
             return $query->result_array();
 
         }
+
+        public function count_non_admin_users() {
+            $this->db->where('isadmin', false);
+            return $this->db->count_all_results('utilisateur');
+        }
+
+        public function get_users_by_level() {
+            $query = $this->db->get('Vue_Utilisateurs_Par_Niveau');
+            return $query->result_array();
+        }
     
+        public function insert_user_niveau($data)
+        {
+            $this->db->insert('utilisateur_niveau', $data);
+        }
     }
 ?>

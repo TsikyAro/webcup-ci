@@ -1,5 +1,6 @@
 <main class="main-root">
     <div class="qcm">
+    <form method="post" action="<?= base_url('coursonline/validate_qcm') ?>">
         <div id="dsn-scrollbar">
             <div class="main-content">
                 <!-- ========== Header Normal ========== -->
@@ -19,8 +20,9 @@
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
+                    <input type="hidden" name="coursid" value="<?php echo $cours->id; ?>">
                     <?php foreach($questions as $question):?>
-                    <input type="hidden" name="question_id" value="<?= $question->id?>">
+                    <input type="hidden" name="question_id[]" value="<?= $question->id?>">
                     <div class="root-blog section-margin ">
                         <div class="form-box">
                             <div class="mb-30 d-flex text-left flex-column align-items-start">
@@ -29,26 +31,20 @@
                                 </p>
                             </div>
                             <?php if($question->idtype == 3):?>
-                            <form id="contact-form" class="form" method="post" action="contact.php"
-                                data-toggle="validator">
                                 <div class="messages"></div>
                                 <div class="input__wrap controls">
                                     <div class="form-group">
                                         <div class="entry-box">
                                             <label>Your answer *</label>
-                                            <input id="form_name" type="text" name="answer_<?= $question->question ?>"
-                                                placeholder="Type your answer" required="required"
-                                                data-error="answer is required." />
+                                            <input type="text" name="answer[<?= $question->id ?>]" placeholder="Type your answer" required="required" data-error="answer is required." />
                                         </div>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                            </form>
                             <?php endif;?>
                             <?php if($question->idtype == 1 || $question->idtype == 2):?>
 
                             <div class="container ">
-                                <form>
                                     <div class="image-response">
                                         <div
                                             class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
@@ -56,10 +52,7 @@
                                             <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
                                                 data-swiper-parallax-scale="0.85">
                                                 <label>
-                                                    <input class="radio-container" type="radio"
-                                                        name="article_<?= $question->question ?>" value="article1">
-
-
+                                                <input class="radio-container" type="radio" name="answer[<?= $question->id ?>]" value="<?= $reponse->id ?>">
                                                     <img class="cover-bg-img"
                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                         data-dsn-src="<?= base_url()?>assets/clients/assets/img/answer/<?= $reponse->image; ?>"
@@ -70,7 +63,6 @@
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
-                                </form>
 
                             </div>
                             <?php endif;?>
@@ -158,8 +150,8 @@
 
 
                     <div class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
-                        <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                            href="<?= base_url('Qcm/resultat')?>">
+                        <button class="next page-numbers d-flex align-items-center justify-content-center text-center"
+                            type="submit">
                             <span class="button-m d-flex justify-content-center align-items-center">
                                 <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
                                     <path
@@ -168,11 +160,12 @@
                                 </svg>
                                 <span>NEXT</span>
                             </span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+    </form>
     </div>
     </div>
     </div>

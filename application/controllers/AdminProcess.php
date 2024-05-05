@@ -18,8 +18,7 @@ class AdminProcess extends Admin_Controller{
 		$this->load->view('templates/admin/footer', $data);
 	}
     public function index(){
-		$data['teams'] = 'CodeForce';
-		$this->template('hello', $data);
+		redirect(base_url('utilisateur/dashboard'));
 	}
 
 }
