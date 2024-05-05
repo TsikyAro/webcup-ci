@@ -24,21 +24,7 @@ class CoursOnline extends Base_Controller{
 	}
     public function index(){
 		$data['teams'] = 'CodeForce';
-<<<<<<< HEAD
         $data['cours'] = $this->CoursModel->get_cours_user($this->session->userdata('user')->id);
-=======
-        // $cours1 = $this->CoursModel->get_all_cours_indice($_SESSION['user']);
-        // $cours1 = $this->CoursModel->get_all_cours();
-        // $data['cours'] = $cours1;
-		// if(empty($cours1)){
-		// 	$_SESSION['cours'] = 1;
-		// }else{
-		// 	$_SESSION['cours'] = $cours1[0]->ordre;
-		// };
-		// $this->template('listCours', $data);
-        $data[
-			'cours'] = $this->CoursModel->get_cours_user($this->session->userdata('user')->id);
->>>>>>> e412f62a10dc741a547ba85cfe09e77addbb672b
 		$this->template('listCours_online', $data);
 	}
 
@@ -48,7 +34,7 @@ class CoursOnline extends Base_Controller{
 		$cour = $_GET['cours'];
 		$go = $this->checker_prochain_cours($cour, $this->session->userdata('user')->id);
 		if(!$go){
-			$this->session->set_flashdata('message', 'Vitao aloha ilay question suivante.');
+			$this->session->set_flashdata('message', 'You must finish the previous level to access the next one.');
 			redirect(base_url('coursonline'));
 		}
 			$data['cours'] = $this->CoursModel->get_cours_by_id($cour);

@@ -61,7 +61,7 @@ class Cours extends CI_Controller
 		$data['teams'] = 'CodeForce';
 		$cour = $_GET['cours'];
 		if($cour!=1){
-			$this->session->set_flashdata('message', 'Vitao aloha ilay 1.');
+			$this->session->set_flashdata('message', 'You must finish the previous level to access the next one.');
 			redirect(base_url('cours/listCours'));
 		}
 			$data['cours'] = $this->CoursModel->get_cours_by_id($cour);
