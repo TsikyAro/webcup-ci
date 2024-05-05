@@ -22,15 +22,15 @@ $note = 3;
                     <th>Mark</th>
                 </tr>
                 <?php for($i=0; $i<count($resultat);$i++){?>
-                    <tr>
-                        <td><?= $resultat[$i]->idqcmcours?></td>
-                        <td><?= $resultat[$i]->reponseutilisateur?></td>
-                        <td><?= $resultat[$i]->question?></td>
-                        <td><?= $resultat[$i]->note?></td>
-                        <?php //$note = $resultat[$i]->note?>
-                    </tr>
+                <tr>
+                    <td><?= $resultat[$i]->idqcmcours?></td>
+                    <td><?= $resultat[$i]->reponseutilisateur?></td>
+                    <td><?= $resultat[$i]->question?></td>
+                    <td><?= $resultat[$i]->note?></td>
+                    <?php //$note = $resultat[$i]->note?>
+                </tr>
                 <?php }?>
-                
+
             </table>
         </div>
         <div class="box-awards-item has-border dsn-up ">
@@ -42,18 +42,27 @@ $note = 3;
                             <br> points</span>
                     </div>
                     <div class="content-icon-zombi">
-                    <img class="icon-zombi"
+                        <img class="icon-zombi"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/<?php if($note<5){ echo 'zombie'; }else{echo 'happy';}?>.png" alt="">
+                            data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/<?php if($note<5){ echo 'zombie'; }else{echo 'happy';}?>.png"
+                            alt="">
                     </div>
                 </div>
             </h5>
         </div>
         <div class="button-box d-flex justify-content-center align-items-center">
             <div>
-                <a href="contact.html" class="mt-30 effect-ajax dsn-button p-relative">
+                <?php if($note > 5): ?>
+                <a href="<?=base_url() ?>coursOnline/fiche?cours=<?=$cours->id+1?>" class="mt-30 dsn-button p-relative">
                     <span class="dsn-border-rdu "></span>Next Cours
                 </a>
+                <?php else: ?>
+
+                <a href="<?=base_url() ?>coursOnline/qcm?id_cours=<?=$cours->id?>&arefaire=true"
+                    class="mt-30 dsn-button p-relative">
+                    <span class="dsn-border-rdu "></span>Cancel
+                </a>
+                <?php endif?>
             </div>
         </div>
     </div>
