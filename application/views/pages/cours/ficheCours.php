@@ -59,7 +59,7 @@
                                     </span>
                                 </a> -->
                                 <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
-                                    href="<?= base_url('Qcm')?>">
+                                    href="<?= base_url('Qcm')?>?id_cours=<?php echo $cours->id; ?>">
                                     <span class="button-m d-flex justify-content-center align-items-center">
                                         <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="100%"
                                             height="100%">

@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$dev_base_url = 'https://codeforce.madagascar.webcup.hodi.host/';
+ $dev_base_url = 'http://localhost:8080/webcup-ci-admin/';
 //$dev_base_url = 'http://localhost:8080/webcup-ci-admin/';
 
 // $dev_base_url = 'https://codeforce.madagascar.webcup.hodi.host/webcup-ci-admin/admin';

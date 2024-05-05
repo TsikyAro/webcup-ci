@@ -2,7 +2,6 @@
     <div class="qcm">
         <div id="dsn-scrollbar">
             <div class="main-content">
-
                 <!-- ========== Header Normal ========== -->
                 <header
                     class="header-page over-hidden background-section p-relative header-padding-top header-padding-bottom border-bottom dsn-header-animation">
@@ -12,26 +11,23 @@
                             <p class="subtitle p-relative line-shap  line-shap-after">
                                 <span class="pl-10 pr-10 background-main dsn-load-animate">QCM</span>
                             </p>
-                            <h1 class="title mt-30 dsn-load-animate text-transform-upper">Alphabets</h1>
+                            <h1 class="title mt-30 dsn-load-animate text-transform-upper"><?php echo $cours->titre; ?>
+                            </h1>
                         </div>
                     </div>
                 </header>
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
+                    <?php foreach($questions as $question):?>
                     <div class="root-blog section-margin ">
                         <div class="form-box">
-                            <div class="line line-top"></div>
-                            <div class="line line-bottom"></div>
-                            <div class="line line-left"></div>
-                            <div class="line line-right"></div>
-
                             <div class="mb-30 d-flex text-left flex-column align-items-start">
                                 <p class="sub-heading line-shap line-shap-before mb-15">
-                                    <span class="line-bg-right">What's your name</span>
+                                    <span class="line-bg-right"><?php echo $question->question ?></span>
                                 </p>
                             </div>
-
+                            <?php if($question->idtype == 3):?>
                             <form id="contact-form" class="form" method="post" action="contact.php"
                                 data-toggle="validator">
                                 <div class="messages"></div>
@@ -46,6 +42,9 @@
                                     </div>
                                 </div>
                             </form>
+                            <?php endif;?>
+                            <?php if($question->idtype == 1 || $question->idtype == 2):?>
+
                             <div class="container ">
                                 <form>
                                     <div class="image-response">
@@ -132,79 +131,89 @@
                                 </form>
 
                             </div>
-                        </div>
+                            <?php endif;?>
+                            <?php if($question->idtype == 4):?>
+                            <div
+                                style="font-family: Arial; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+                                <h2 style="margin:20px">REPEAT THREE TIMES</h2>
+                                <div class="card" id="letterCard"
+                                    style="width: 100px; height: 100px; border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
+                                    <div style="font-size: 24px;">A</div>
+                                </div>
 
-                    </div>
-                    <div
-                        style="font-family: Arial; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-                        <h2 style="margin:20px">REPEAT THREE TIMES</h2>
-                        <div class="card" id="letterCard"
-                            style="width: 100px; height: 100px; border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
-                            <div style="font-size: 24px;">A</div>
-                        </div>
+                                <img style="cursor: pointer; width: 40px;background-color: green;"
+                                    src="<?= base_url('assets/img/microphone-icon.png') ?>" alt="Microphone"
+                                    id="microphoneBtn" class="microphone-icon">
+                                <div id="output" style="margin-top: 10px; font-size: 24px;"></div>
 
-                        <img style="cursor: pointer; width: 40px;background-color: green;" src="<?= base_url('assets/img/microphone-icon.png') ?>" alt="Microphone" id="microphoneBtn" class="microphone-icon">
-                        <div id="output" style="margin-top: 10px; font-size: 24px;"></div>
+                                <script>
+                                    const letterCard = document.getElementById('letterCard');
+                                    const microphoneBtn = document.getElementById('microphoneBtn');
+                                    const outputDiv = document.getElementById('output');
 
-                        <script>
-                            const letterCard = document.getElementById('letterCard');
-                            const microphoneBtn = document.getElementById('microphoneBtn');
-                            const outputDiv = document.getElementById('output');
-
-                            // Fonction pour changer la couleur de la carte en fonction de la lettre détectée
-                            function changeColor(letter) {
-                                if (letter === 'A') {
-                                    letterCard.style.backgroundColor = 'green';
-                                } else {
-                                    letterCard.style.backgroundColor = 'red';
-                                }
-                            }
-
-                            // Fonction de reconnaissance vocale
-                            function startSpeechRecognition() {
-                                const recognition = new (webkitSpeechRecognition || SpeechRecognition)(); // Support pour différents navigateurs
-
-                                recognition.lang = 'fr-FR'; // Langue française
-
-                                recognition.onstart = function () {
-                                    // Ajouter l'animation pulse à l'icône du microphone lorsqu'il commence à écouter
-                                    microphoneBtn.classList.add('pulse');
-                                };
-
-                                recognition.onend = function () {
-                                    // Supprimer l'animation pulse de l'icône du microphone lorsque l'écoute est terminée
-                                    microphoneBtn.classList.remove('pulse');
-                                };
-
-                                recognition.onresult = function (event) {
-                                    const transcript = event.results[0][0].transcript.trim();
-                                    const firstLetter = transcript.charAt(0).toUpperCase(); // Extraire la première lettre et la mettre en majuscule
-                                    console.log('Vous avez dit:', firstLetter); // Affichage dans la console de la première lettre détectée
-                                    outputDiv.textContent = firstLetter;
-
-                                    // Vérifier si la lettre A a été prononcée
-                                    if (firstLetter === 'A') {
-                                        changeColor('A');
-                                    } else {
-                                        changeColor('Autre');
+                                    // Fonction pour changer la couleur de la carte en fonction de la lettre détectée
+                                    function changeColor(letter) {
+                                        if (letter === 'A') {
+                                            letterCard.style.backgroundColor = 'green';
+                                        } else {
+                                            letterCard.style.backgroundColor = 'red';
+                                        }
                                     }
-                                };
 
-                                recognition.onerror = function (event) {
-                                    console.error('Erreur de reconnaissance :', event.error);
-                                    outputDiv.textContent = 'No response detected.';
-                                    letterCard.style.backgroundColor = 'black'; 
-                                };
+                                    // Fonction de reconnaissance vocale
+                                    function startSpeechRecognition() {
+                                        const recognition = new(webkitSpeechRecognition || SpeechRecognition)
+                                            (); // Support pour différents navigateurs
 
-                                recognition.start();
-                            }
+                                        recognition.lang = 'fr-FR'; // Langue française
 
-                            // Écouteur d'événement pour démarrer la reconnaissance vocale lors du clic sur l'icône du microphone
-                            microphoneBtn.addEventListener('click', function () {
-                                startSpeechRecognition();
-                            });
-                        </script>
+                                        recognition.onstart = function () {
+                                            // Ajouter l'animation pulse à l'icône du microphone lorsqu'il commence à écouter
+                                            microphoneBtn.classList.add('pulse');
+                                        };
+
+                                        recognition.onend = function () {
+                                            // Supprimer l'animation pulse de l'icône du microphone lorsque l'écoute est terminée
+                                            microphoneBtn.classList.remove('pulse');
+                                        };
+
+                                        recognition.onresult = function (event) {
+                                            const transcript = event.results[0][0].transcript.trim();
+                                            const firstLetter = transcript.charAt(0)
+                                                .toUpperCase(); // Extraire la première lettre et la mettre en majuscule
+                                            console.log('Vous avez dit:',
+                                                firstLetter
+                                                ); // Affichage dans la console de la première lettre détectée
+                                            outputDiv.textContent = firstLetter;
+
+                                            // Vérifier si la lettre A a été prononcée
+                                            if (firstLetter === 'A') {
+                                                changeColor('A');
+                                            } else {
+                                                changeColor('Autre');
+                                            }
+                                        };
+
+                                        recognition.onerror = function (event) {
+                                            console.error('Erreur de reconnaissance :', event.error);
+                                            outputDiv.textContent = 'No response detected.';
+                                            letterCard.style.backgroundColor = 'black';
+                                        };
+
+                                        recognition.start();
+                                    }
+
+                                    // Écouteur d'événement pour démarrer la reconnaissance vocale lors du clic sur l'icône du microphone
+                                    microphoneBtn.addEventListener('click', function () {
+                                        startSpeechRecognition();
+                                    });
+                                </script>
+                            </div>
+                            <?php endif;?>
+                        </div>
                     </div>
+                    <?php endforeach;?>
+
 
                     <div class="dsn-paginations d-flex justify-content-center border-bottom border-top pt-30 pb-30">
                         <a class="next page-numbers d-flex align-items-center justify-content-center text-center"
