@@ -16,6 +16,7 @@
                         </div>
                     </div>
                 </header>
+                <?php echo '<pre>' . var_export($questions, true) . '</pre>';?>
                 <!-- ========== End Header Normal ========== -->
 
                 <div class="wrapper">
@@ -35,8 +36,9 @@
                                     <div class="form-group">
                                         <div class="entry-box">
                                             <label>Your answer *</label>
-                                            <input id="form_name" type="text" name="name" placeholder="Type your name"
-                                                required="required" data-error="name is required." />
+                                            <input id="form_name" type="text" name="answer"
+                                                placeholder="Type your answer" required="required"
+                                                data-error="answer is required." />
                                         </div>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -50,84 +52,24 @@
                                     <div class="image-response">
                                         <div
                                             class="dsn-posts d-grid grid-lg-3 grid-sm-2 our-blog our-blog-classic our-blog-full-img">
+                                            <?php foreach ($question->reponses_possibles as $reponse): ?>
                                             <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
                                                 data-swiper-parallax-scale="0.85">
                                                 <label>
                                                     <input class="radio-container" type="radio" name="article"
                                                         value="article1">
-                                                    <div class="box-meta">
-                                                        <div class="entry-date">
-                                                            <span class="author">Dsn Grid</span>
-                                                            <a href="post.html" class="effect-ajax">March , 17th
-                                                                2020</a>
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="box-img over-hidden">
-                                                        <img class="cover-bg-img"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-dsn-src="assets/img/blog/2.jpg" alt="">
-                                                    </div>
-                                                    <div class="box-content p-relative">
 
-                                                        <div class="box-content-body">
-                                                            <div class="metas">
-                                                                <span>Creative</span>
-                                                                <span>Travel</span>
-                                                            </div>
-                                                            <h4 class="title-block mb-20">
-                                                                <p class="effect-ajax">The Day I Lost
-                                                                    My
-                                                                    Child
-                                                                    in
-                                                                    Charles de Gaulle Airport</p>
-                                                            </h4>
-                                                            <p>Streamer fish California halibut Pacific saury. Slickhead
-                                                                grunion
-                                                                lake trout. Canthigaster rostrata spikefish…</p>
-                                                        </div>
-                                                    </div>
+                                                    <img class="cover-bg-img"
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                        data-dsn-src="<?= base_url()?>assets/clients/assets/img/answer/<?= $reponse->image; ?>"
+                                                        alt="">
+
                                                 </label>
                                             </div>
-
-                                            <div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-                                                data-swiper-parallax-scale="0.85"> <label>
-                                                    <input class="radio-container" type="radio" name="article"
-                                                        value="article2">
-                                                    <div class="box-meta">
-                                                        <div class="entry-date">
-                                                            <span class="author">Dsn Grid</span>
-                                                            <p class="effect-ajax">March , 17th
-                                                                2020</p>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="box-img over-hidden">
-                                                        <img class="cover-bg-img"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-dsn-src="assets/img/blog/3.jpg" alt="">
-                                                    </div>
-                                                    <div class="box-content p-relative">
-
-                                                        <div class="box-content-body">
-                                                            <div class="metas">
-                                                                <span>Creative</span>
-                                                                <span>Travel</span>
-                                                            </div>
-                                                            <h4 class="title-block mb-20">
-                                                                <p class="effect-ajax">The Day I Lost
-                                                                    My
-                                                                    Child
-                                                                    in
-                                                                    Charles de Gaulle Airport</p>
-                                                            </h4>
-                                                            <p>Streamer fish California halibut Pacific saury. Slickhead
-                                                                grunion
-                                                                lake trout. Canthigaster rostrata spikefish…</p>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
                                 </form>
 
                             </div>
@@ -138,7 +80,8 @@
                                 <h2 style="margin:20px">REPEAT THREE TIMES</h2>
                                 <div class="card" id="letterCard"
                                     style="width: 100px; height: 100px; border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
-                                    <div style="font-size: 24px;">A</div>
+                                    <div style="font-size: 24px;">
+                                        <?php echo($question->reponses_possibles[0]->reponse) ?></div>
                                 </div>
 
                                 <img style="cursor: pointer; width: 40px;background-color: green;"
@@ -183,7 +126,7 @@
                                                 .toUpperCase(); // Extraire la première lettre et la mettre en majuscule
                                             console.log('Vous avez dit:',
                                                 firstLetter
-                                                ); // Affichage dans la console de la première lettre détectée
+                                            ); // Affichage dans la console de la première lettre détectée
                                             outputDiv.textContent = firstLetter;
 
                                             // Vérifier si la lettre A a été prononcée
