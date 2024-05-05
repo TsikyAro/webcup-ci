@@ -222,14 +222,8 @@
                             <h2 class="section-title"><?= $cours[0]->titre ?></h2>
 
                         </div>
-
-
-                        <p class="mb-10">
-                            Most of our writings have centered on implementing strategies for business
-                            units, with their unique
-                        </p>
                         <p>
-                        <?= $cours[0]->description ?></p>
+                        <?= $cours[0]->descriptioncourte ?></p>
 
                         <a href="<?php echo site_url();?>cours/listCours" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
                             <span class="dsn-border border-color-reverse-color"></span>
