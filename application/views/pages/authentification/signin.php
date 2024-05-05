@@ -46,10 +46,6 @@
                                     <?php echo form_error('password', '<div class="error">', '</div>'); ?>
                                 </div>
                                 <div class="butt-auth" style="display: flex; width:100%; gap:30vw">
-                                    <a class="dsn-button background-main border-radius"
-                                        href="../authentification/signup">
-                                        SIGN UP
-                                    </a>
                                     <div class="text-right">
                                         <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
                                             <input type="submit" value="SIGN IN"
