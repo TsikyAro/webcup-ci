@@ -51,11 +51,19 @@
                     </a>
                 </li>
                 <?php endif; ?>
+                <?php if (!$this->session->userdata('user')): ?>
                 <li class="dsn-drop-down">
                     <a href="<?php echo site_url();?>cours/listCours" class="user-no-selection">
                         <span class="dsn-title-menu">List of course</span>
                     </a>
                 </li>
+                <?php else: ?>
+                    <li class="dsn-drop-down">
+                    <a href="<?php echo site_url();?>coursonline" class="user-no-selection">
+                        <span class="dsn-title-menu">List of course</span>
+                    </a>
+                </li>
+                <?php endif; ?>
             </ul>
             <div class="container-content  p-absolute h-100 left-60 d-flex flex-column justify-content-center">
                 <div class="nav__info">
