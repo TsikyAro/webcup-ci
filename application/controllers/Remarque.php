@@ -27,10 +27,10 @@ class Remarque extends CI_Controller {
             );
 
             if ($this->RemarqueModel->insert_remarque($data)) {
-                redirect(base_url());
+                // redirect(base_url());
 
             } else {
-                redirect(base_url());
+                // redirect(base_url());
             }
         }
         redirect(base_url());
