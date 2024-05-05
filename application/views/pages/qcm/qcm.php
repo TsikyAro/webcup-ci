@@ -134,10 +134,10 @@
                             <?php endif;?>
                             <?php if($question->idtype == 4):?>
                             <div
-                                style="font-family: Arial; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+                                style="font-family: Arial; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
                                 <h2 style="margin:20px">REPEAT THREE TIMES</h2>
                                 <div class="card" id="letterCard"
-                                    style="width: 100px; height: 100px; border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
+                                    style="width: 100px;border: 1px solid #ccc; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; background-color: black; color: #fff;">
                                     <div style="font-size: 24px;">A</div>
                                 </div>
 
