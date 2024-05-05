@@ -417,7 +417,7 @@
                                             <div class="box-img over-hidden">
                                                 <img class="cover-bg-img"
                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                    data-dsn-src="assets/img/blog/1.jpg" alt="">
+                                                    data-dsn-src="<?php echo base_url() ?>assets/clients/assets/img/cours/<?= $cour->photo ?>"alt="img">
                                             </div>
                                             <div class="box-content p-relative">
 

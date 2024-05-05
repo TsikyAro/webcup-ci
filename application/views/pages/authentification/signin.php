@@ -20,7 +20,8 @@
 
                         <?php $this->load->view('includes/messages_flash'); ?>
 
-                        <form class="form" method="post" action="<?php echo site_url('Authentification/login') ?>" data-toggle="validator">
+                        <form class="form" method="post" action="<?php echo site_url('Authentification/login') ?>"
+                            data-toggle="validator">
                             <div class="messages"></div>
                             <div class="input__wrap controls">
                                 <div class="form-group">
@@ -44,11 +45,16 @@
                                     <div class="help-block with-errors"></div>
                                     <?php echo form_error('password', '<div class="error">', '</div>'); ?>
                                 </div>
-
-                                <div class="text-right">
-                                    <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                                        <input type="submit" value="SIGN IN"
-                                            class="dsn-button background-main border-radius">
+                                <div class="butt-auth" style="display: flex; width:100%; gap:30vw">
+                                    <a class="dsn-button background-main border-radius"
+                                        href="../authentification/signup">
+                                        SIGN UP
+                                    </a>
+                                    <div class="text-right">
+                                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                                            <input type="submit" value="SIGN IN"
+                                                class="dsn-button background-main border-radius">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
