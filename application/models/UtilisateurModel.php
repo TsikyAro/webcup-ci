@@ -27,6 +27,7 @@
         {
             $this->db->insert('utilisateur', $data);
         }
+
         public function insertion_utilisateur_niveau($idniveau,$idutilisateur,$idcourstermine){
             $data = array(
                 'idniveau'=>$idniveau,
@@ -35,6 +36,12 @@
             );
             $this->db->insert('utilisateur_niveau', $data);
             return $this->db->insert_id();
+        }
+
+        public function get_utilisateurs_niveau() {
+            $query = $this->db->get('Vue_Utilisateurs_Niveau');
+            return $query->result_array();
+
         }
     
     }
