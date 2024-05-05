@@ -1,6 +1,6 @@
 <main class="main-root">
     <div class="qcm">
-    <form method="post" action="<?= base_url('coursOnline/validate_qcm') ?>">
+    <form method="post" action="<?= base_url('coursonline/validate_qcm') ?>">
         <div id="dsn-scrollbar">
             <div class="main-content">
                 <!-- ========== Header Normal ========== -->

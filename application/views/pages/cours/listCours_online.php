@@ -50,13 +50,13 @@
                                             <span><?= $cours[$i]->ordre ?></span>
                                         </div>
                                         <h4 class="title-block mb-20">
-                                            <a href="<?= base_url('coursOnline/fiche')?>?cours=<?=$cours[$i]->id?>"
+                                            <a href="<?= base_url('coursonline/fiche')?>?cours=<?=$cours[$i]->id?>"
                                                 class="">Let's study
                                                 <?= $cours[$i]->titre?></a>
                                         </h4>
                                         <p><?= $cours[$i]->descriptioncourte?></p>
                                         <?php if($cours[$i]->etat_cours != 'Terminé' ):?>
-                                        <a href="<?= base_url('coursOnline/fiche')?>?cours=<?=$cours[$i]->id?>"
+                                        <a href="<?= base_url('coursonline/fiche')?>?cours=<?=$cours[$i]->id?>"
                                             class="link-vist p-relative mt-20">
 
                                             <span class="link-vist-text">Load More</span>
@@ -72,7 +72,7 @@
                                         </a>
                                         <?php endif;?>
                                         <?php if($cours[$i]->etat_cours == 'Terminé' ):?>
-                                        <a href="<?= base_url('coursOnline/resultat')?>?idcours=<?=$cours[$i]->id?>"
+                                        <a href="<?= base_url('coursonline/resultat')?>?idcours=<?=$cours[$i]->id?>"
                                             class="link-vist p-relative mt-20">
 
                                             <span class="link-vist-text">Result</span>

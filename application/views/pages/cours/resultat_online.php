@@ -59,13 +59,13 @@ $note = ($nombre_de_reponses_correctes / $nombre_de_questions) * 10;
         <div class="button-box d-flex justify-content-center align-items-center">
             <div>
                 <?php if($note > 5): ?>
-                <a href="<?=base_url() ?>coursOnline/fiche?cours=<?=$cours->id+1?>"
+                <a href="<?=base_url() ?>coursonline/fiche?cours=<?=$cours->id+1?>"
                     class="mt-30 dsn-button p-relative">
                     <span class="dsn-border-rdu "></span>Next Cours
                 </a>
                 <?php else: ?>
 
-                <a href="<?=base_url() ?>coursOnline/qcm?id_cours=<?=$cours->id?>&arefaire=true"
+                <a href="<?=base_url() ?>coursonline/qcm?id_cours=<?=$cours->id?>&arefaire=true"
                     class="mt-30 dsn-button p-relative">
                     <span class="dsn-border-rdu "></span>Cancel
                 </a>

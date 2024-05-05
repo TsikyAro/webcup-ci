@@ -59,7 +59,7 @@
                 </li>
                 <?php else: ?>
                     <li class="dsn-drop-down">
-                    <a href="<?php echo site_url();?>coursOnline" class="user-no-selection">
+                    <a href="<?php echo site_url();?>coursonline" class="user-no-selection">
                         <span class="dsn-title-menu">List of course</span>
                     </a>
                 </li>
