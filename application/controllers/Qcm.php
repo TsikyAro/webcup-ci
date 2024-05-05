@@ -10,6 +10,8 @@ class Qcm extends CI_Controller
 		$this->load->model('CoursModel');
 		$this->load->model('QcmCoursModel');
 		$this->load->model('QcmReponseModel');
+		$this->load->model('CoursModel');
+        $this->load->model('ResultatModel');
 	}
 	public function template($page, $data)
 	{
@@ -39,7 +41,7 @@ class Qcm extends CI_Controller
     public function resultat()
 	{
 		$data['teams'] = 'CodeForce';
-		$reps = $this->QcmReponseModel->get_resultat_qcm($_SESSION['qcm']['cour'],$_SESSION['user']->id);
+		$reps = $this->ResultatModel->getresultat($_SESSION['qcm']['cour'],$_SESSION['user']->id);
 		$reps = $this->QcmReponseModel->checknote($reps);
 		$data['resultat'] = $reps;
 		$this->template('resultat', $data);
