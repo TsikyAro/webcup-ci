@@ -30,7 +30,7 @@ class Remarque extends CI_Controller {
                 // redirect(site_url());
 
             } else {
-                redirect(site_url());
+                // redirect(site_url());
             }
         }
         redirect(base_url());
