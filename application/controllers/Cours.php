@@ -48,4 +48,10 @@ class Cours extends CI_Controller
 			redirect(base_url('authentification/signin'));
 		}
 	}
+
+	public function politesse()
+	{
+		$data['teams'] = 'CodeForce';
+		$this->template('politesse', $data);
+	}
 }
