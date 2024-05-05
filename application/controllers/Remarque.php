@@ -17,7 +17,7 @@ class Remarque extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             // Validation failed, show the form again with validation errors
-            // redirect(base_url());
+            redirect(base_url());
         } else {
             // Validation passed, proceed with inserting data into database
             $data = array(
@@ -27,8 +27,7 @@ class Remarque extends CI_Controller {
             );
 
             if ($this->RemarqueModel->insert_remarque($data)) {
-                // redirect(base_url());
-                
+                redirect(base_url());
 
             } else {
                 // redirect(base_url());
