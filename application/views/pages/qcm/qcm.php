@@ -97,7 +97,7 @@
                                     hiddenInput.setAttribute('type', 'hidden');
                                     hiddenInput.setAttribute('name', 'reponses[<?= $question->id ?>]');
                                     // hiddenInput.setAttribute('placeholder', 'huhuhuuu');
-                                    hiddenInput.setAttribute('value', <?= $question->reponses_possibles[0]->reponse ?>);
+                                   // hiddenInput.setAttribute('value', <?= $question->reponses_possibles[0]->reponse ?>);
                                     document.getElementById('contact-form').appendChild(hiddenInput);
                                     // Fonction pour changer la couleur de la carte en fonction de la lettre détectée
                                     function changeColor(letter) {
